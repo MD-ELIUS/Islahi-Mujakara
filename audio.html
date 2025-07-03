@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎧 ইসলামিক অডিও লাইব্রেরি</title>
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      position: absolute;
+      z-index: 10;
+      background-color: white;
+      border: 1px solid #15803D;
+      border-radius: 0.75rem;
+      width: 100%;
+      max-height: 250px;
+      overflow-y: auto;
+      display: none;
+      margin-top: 0.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      scrollbar-width: thin;
+      scrollbar-color: #15803D #E2E8F0;
+    }
+    .dropdown-content::-webkit-scrollbar {
+      width: 8px;
+    }
+    .dropdown-content::-webkit-scrollbar-track {
+      background: #F0FDF4;
+      border-radius: 0.75rem;
+    }
+    .dropdown-content::-webkit-scrollbar-thumb {
+      background-color: #15803D;
+      border-radius: 0.75rem;
+      border: 2px solid #F0FDF4;
+    }
+    .dropdown-content.active {
+      display: block;
+      animation: slideDown 0.2s ease-out;
+    }
+    .dropdown-content div {
+      padding: 10px 16px;
+      cursor: pointer;
+      color: #15803D;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid #DCFCE7;
+    }
+    .dropdown-content div:last-child {
+      border-bottom: none;
+    }
+    .dropdown-content div:hover {
+      background-color: #F0FDF4;
+      padding-left: 20px;
+    }
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    input:not(:placeholder-shown), input:focus {
+      border-color: #22c55e;
+      border-width: 2px;
+      --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+      --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+      box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+      --tw-ring-color: rgb(34 197 94 / 0.5);
+      --tw-ring-opacity: 0.5;
+    }
+    /* Ensure consistent text color for all filter inputs */
+    #categoryInput, #speakerInput, #seriesInput {
+      color: #15803d !important;
+    }
+    /* Base styles for all filter inputs */
+    .filter-input {
+      color: #15803d !important;
+      border-color: #86efac;
+    }
+    /* Specific styles for series input */
+    #seriesInput {
+      color: #15803d !important;
+    }
+
+    /* Clear button styles */
+    .clear-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #15803d;
+      cursor: pointer;
+      font-size: 18px;
+      display: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #f0fdf4;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .clear-btn:hover {
+      background: #dcfce7;
+    }
+
+    input:not(:placeholder-shown) + .clear-btn {
+      display: flex;
+    }
+
+    /* Add new heading styles */
+    .stylish-heading {
+      position: relative;
+      display: inline-block;
+      padding: 1rem 3rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(45deg, #4CAF50, #45a049);
+      color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+      transition: all 0.3s ease;
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+
+    .stylish-heading::before,
+    .stylish-heading::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border: 4px solid #4CAF50;
+      transition: all 0.3s ease;
+    }
+
+    .stylish-heading::before {
+      top: -10px;
+      left: -10px;
+      border-right: 0;
+      border-bottom: 0;
+    }
+
+    .stylish-heading::after {
+      bottom: -10px;
+      right: -10px;
+      border-left: 0;
+      border-top: 0;
+    }
+
+    .stylish-heading:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+    }
+
+    .stylish-heading:hover::before,
+    .stylish-heading:hover::after {
+      width: 30px;
+      height: 30px;
+    }
+
+    .stylish-heading i {
+      display: inline-block;
+      margin-left: 1rem;
+      font-size: 2.25rem;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* Style default audio player */
+    audio {
+      width: 100%;
+      height: 40px;
+      margin: 0.5rem 0;
+      border-radius: 8px;
+      background: #f0fdf4;
+    }
+
+    audio::-webkit-media-controls-panel {
+      background: #f0fdf4;
+    }
+
+    audio::-webkit-media-controls-current-time-display,
+    audio::-webkit-media-controls-time-remaining-display {
+      color: #15803d;
+    }
+
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-mute-button {
+      background-color: #22c55e;
+      border-radius: 50%;
+      color: white;
+    }
+
+    audio::-webkit-media-controls-volume-slider,
+    audio::-webkit-media-controls-timeline {
+      background-color: #dcfce7;
+      border-radius: 2px;
+      height: 4px;
+    }
+
+    audio::-webkit-media-controls-volume-slider::-webkit-slider-thumb,
+    audio::-webkit-media-controls-timeline::-webkit-slider-thumb {
+      background: #15803d;
+      border: 2px solid white;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+    }
+
+    .play-pause-btn.error {
+      background: #dc2626;
+      cursor: not-allowed;
+    }
+
+    .play-pause-btn.error:hover {
+      background: #dc2626;
+      transform: none;
+    }
+
+    .audio-error-message {
+      color: #dc2626;
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    .audio-error-message.show {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+<!-- Top Bar -->
+<div class="fixed top-0 right-0 left-0 z-50 bg-green-800 text-white text-sm py-2">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <span><i class="fa-solid fa-feather-pointed text-green-600 mr-2"></i>আসুন অন্তরকে পরিশুদ্ধ করি</span>
+    </div>
+    <div class="flex gap-3">
+      <a href="#" class="hover:text-green-300"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="hover:text-green-300"><i class="fab fa-youtube"></i></a>
+      <a href="#" class="hover:text-green-300"><i class="fab fa-telegram"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation Bar -->
+<header class="sticky top-8 z-50 bg-white shadow-md border-b border-green-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo & Site Title -->
+      <a href="index.html" class="flex items-center gap-2 px-4 py-2 bg-green-100 hover:bg-green-200 text-green-800 font-bold rounded-xl shadow shadow-green-300 transition duration-200">
+        <i class="fa-solid fa-mosque text-green-600 text-lg"></i>
+        <span class="text-lg">ইসলাহী মুজাকারা</span>
+      </a>
+      
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center gap-4 text-green-800 font-semibold text-sm bg-white px-4 py-2 rounded-xl shadow border border-green-100">
+        <a href="index.html" class="px-3 py-1 rounded hover:bg-green-100 transition">হোম</a>
+        <a href="quran.html" class="px-3 py-1 rounded hover:bg-green-100 transition">কুরআন</a>
+        <a href="book.html" class="px-3 py-1 rounded hover:bg-green-100 transition">বই</a>
+        <a href="audio.html" class="px-3 py-1 rounded bg-green-100 transition">অডিও</a>
+        <a href="article.html" class="px-3 py-1 rounded hover:bg-green-100 transition">প্রবন্ধ</a>
+        <a href="contact.html" class="px-3 py-1 rounded hover:bg-green-100 transition">যোগাযোগ</a>
+      </nav>
+      
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="menuToggle" class="text-green-700 text-2xl focus:outline-none">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-green-50 px-4 pb-4 rounded-b-xl shadow border-t border-green-100">
+    <a href="index.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">হোম</a>
+    <a href="quran.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">কুরআন</a>
+    <a href="book.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">বই</a>
+    <a href="audio.html" class="block py-2 px-2 rounded bg-green-100 text-green-800 font-semibold">অডিও</a>
+    <a href="article.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">প্রবন্ধ</a>
+    <a href="contact.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">যোগাযোগ</a>
+  </div>
+</header>
+
+<section class="bg-gradient-to-br from-green-100 to-green-50 py-10 px-4 md:px-10 rounded-b-xl shadow-sm">
+  <div class="max-w-7xl mx-auto">
+    <div class="bg-white rounded-xl shadow-lg p-8 border border-green-200 mt-10">
+      <div class="text-center mb-10">
+        <h2 class="inline-block text-3xl sm:text-4xl font-bold px-8 py-4 rounded-xl bg-gradient-to-r from-green-100 via-green-50 to-green-100 shadow-md border-l-4 border-r-4 border-green-500 text-green-700">
+          অডিও শুনুন
+          <i class="fa-solid fa-headphones text-green-600 ml-2"></i>
+        </h2>
+      </div>
+
+      <!-- Search Row -->
+      <div class="mb-6">
+        <label for="audioSearch" class="block text-green-700 font-semibold mb-2 text-center text-lg">
+          <i class="fas fa-search text-green-600 mr-2"></i>অডিও খুঁজুন
+        </label>
+        <div class="dropdown relative">
+          <input
+            type="text"
+            id="audioSearch"
+            placeholder="🎧 অডিওর নাম লিখুন..."
+            class="filter-input w-full px-4 py-3 border-2 border-green-300 rounded-xl outline-none shadow-sm placeholder:text-green-700 font-semibold placeholder:font-normal text-green-700 transition-all duration-200"
+          />
+          <div class="clear-btn" onclick="clearAudioSearch()">×</div>
+          <div id="audioSuggestions" class="dropdown-content"></div>
+        </div>
+      </div>
+
+      <!-- Filters Row -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+        <div class="dropdown relative">
+          <input id="categoryInput" type="text" placeholder="ক্যাটাগরি..." 
+            class="filter-input w-full px-4 py-2 border-2 border-green-300 rounded-xl outline-none shadow-sm placeholder:text-green-700 font-semibold placeholder:font-normal text-green-700 transition-all duration-200"
+          />
+          <div class="clear-btn" onclick="clearFilter('categoryInput')">×</div>
+          <div id="categoryDropdown" class="dropdown-content"></div>
+        </div>
+        <div class="dropdown relative">
+          <input id="speakerInput" type="text" placeholder="বক্তা..." 
+            class="filter-input w-full px-4 py-2 border-2 border-green-300 rounded-xl outline-none shadow-sm placeholder:text-green-700 font-semibold placeholder:font-normal text-green-700 transition-all duration-200"
+          />
+          <div class="clear-btn" onclick="clearFilter('speakerInput')">×</div>
+          <div id="speakerDropdown" class="dropdown-content"></div>
+        </div>
+        <div class="dropdown relative">
+          <input id="seriesInput" type="text" placeholder="সিরিজ..." 
+            class="filter-input w-full px-4 py-2 border-2 border-green-300 rounded-xl outline-none shadow-sm placeholder:text-green-700 font-semibold placeholder:font-normal text-green-700 transition-all duration-200"
+          />
+          <div class="clear-btn" onclick="clearFilter('seriesInput')">×</div>
+          <div id="seriesDropdown" class="dropdown-content"></div>
+        </div>
+      </div>
+
+      <div class="flex justify-center mb-6">
+        <button id="toggleAllBtn" class="px-6 py-2 bg-green-600 text-white rounded-xl text-center hover:bg-green-700 transition duration-200 shadow-md">
+          সবগুলো অডিও দেখুন
+        </button>
+      </div>
+
+      <h2 id="categoryHeading" class="text-xl font-bold text-center mb-4"></h2>
+
+      <div id="audio-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+      <div id="pagination" class="mt-8 flex justify-center overflow-x-auto gap-2"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Audio Player Modal -->
+<div id="audioModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4 md:p-0 hidden">
+  <div class="relative bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden">
+    <!-- Close Button -->
+    <button onclick="closeAudioModal()" class="absolute top-3 right-3 text-white bg-red-500 hover:bg-red-600 rounded-full w-8 h-8 flex items-center justify-center shadow-md transition duration-300 ease-in-out z-10">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Title & Speaker -->
+    <div class="bg-white py-3 px-4 border-b border-gray-200">
+      <h2 id="audioTitle" class="text-lg md:text-xl font-semibold text-green-800 text-center">🎧 অডিও চলছে</h2>
+      <p id="audioSpeaker" class="text-sm text-gray-600 text-center"></p>
+    </div>
+
+    <!-- Audio Player -->
+    <div class="p-4">
+      <audio id="audioPlayer" controls class="w-full">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+</div>
+
+
+
+
+<footer class="bg-gradient-to-b from-white to-green-50 border-t border-green-200 text-green-900 pt-14 ">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    
+    <!-- About -->
+    <div>
+      <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-3">আমাদের সম্পর্কে</h3>
+      <p class="text-[15px] text-green-800 leading-relaxed">
+        আমরা কুরআন, হাদিস, সীরাত, বই, অডিও ও প্রবন্ধের মাধ্যমে ইসলামী জ্ঞান ছড়িয়ে দিতে কাজ করছি।
+        আপনার সাথে আছি সত্যের আলো পৌঁছে দিতে।
+      </p>
+    </div>
+    
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-3">দ্রুত লিংক</h3>
+      <ul class="space-y-2 text-[15px]">
+        <li><a href="#" class="flex items-center gap-2 hover:text-green-700 transition"><i class="fa-solid fa-book-open-reader"></i> কুরআন ও তাফসীর</a></li>
+        <li><a href="#" class="flex items-center gap-2 hover:text-green-700 transition"><i class="fa-solid fa-book"></i> ইসলামী বই</a></li>
+        <li><a href="#" class="flex items-center gap-2 hover:text-green-700 transition"><i class="fa-solid fa-mosque"></i> সীরাত ও সুন্নাহ</a></li>
+        <li><a href="#" class="flex items-center gap-2 hover:text-green-700 transition"><i class="fa-solid fa-pen-nib"></i> প্রবন্ধ</a></li>
+      </ul>
+    </div>
+    
+    <!-- Contact -->
+    <div>
+      <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-3">যোগাযোগ</h3>
+      <p class="text-[15px]"><i class="fa-solid fa-envelope text-green-600 mr-2"></i> <a href="mailto:info@example.com" class="hover:underline">info@example.com</a></p>
+      <p class="text-[15px] mt-2"><i class="fa-brands fa-facebook text-green-600 mr-2"></i> <a href="#" class="hover:underline">fb.com/yourpage</a></p>
+    </div>
+    
+    <!-- Subscribe -->
+    <div>
+      <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-3">নতুন আপডেট পেতে</h3>
+      <form class="flex flex-col sm:flex-row gap-3">
+        <input type="email" placeholder="আপনার ইমেইল" class="w-full px-4 py-2 rounded-md border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 bg-white text-green-800" />
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition font-medium">সাবস্ক্রাইব</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Divider Ornament -->
+  <div class="mt-10 flex justify-center">
+    <svg class="w-40 h-6 text-green-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 172 28">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M1 14h20M30 14h20M59 14h20M88 14h20M117 14h20M146 14h25" />
+    </svg>
+  </div>
+  
+  <!-- Bottom Copyright -->
+  <div class="text-center text-sm text-green-600 py-6 mt-4 border-t border-green-100">
+    &copy; ২০২৫ <span class="font-semibold">আপনার ওয়েবসাইট নাম</span> | সর্বস্বত্ব সংরক্ষিত।
+  </div>
+</footer>  
+  
+
+
+
+
+<script>
+  // Global Variables & State Management
+  let audiosData = [];
+  let selected = { category: '', speaker: '', series: '' };
+  let isShowingAll = false;
+  let currentPage = 1;
+  const audiosPerPage = 9;
+
+  // Store unique values for filtering
+  const uniqueValues = {
+    categories: new Set(),
+    speakers: new Set(),
+    series: new Set(),
+    titles: new Set()
+  };
+
+  function processUniqueValues(data) {
+    data.forEach(audio => {
+      if (audio.title && audio.title.bn) {
+        uniqueValues.titles.add(audio.title.bn);
+      }
+      if (audio.category && audio.category.bn) {
+        uniqueValues.categories.add(audio.category.bn);
+      }
+      if (audio.speaker && audio.speaker.bn) {
+        uniqueValues.speakers.add(audio.speaker.bn);
+      }
+      if (audio.series && audio.series.bn) {
+        uniqueValues.series.add(audio.series.bn);
+      }
+    });
+  }
+
+  function updateFilters() {
+    // If nothing is selected and not showing all, clear the display
+    if (!isShowingAll && !selected.category && !selected.speaker && !selected.series && !document.getElementById("audioSearch").value.trim()) {
+      renderAudios([]);
+      document.getElementById("pagination").innerHTML = "";
+      return;
+    }
+
+    // Always start with all audios when filtering
+    let filteredAudios = [...audiosData];
+    console.log('Initial audios count:', filteredAudios.length); // Debug log
+
+    // Apply search filter
+    const searchQuery = document.getElementById("audioSearch").value.trim().toLowerCase();
+    if (searchQuery) {
+      filteredAudios = filteredAudios.filter(audio => {
+        const fullTitle = `${audio.title.bn} (${audio.title.en})`.toLowerCase();
+        const searchLower = searchQuery.toLowerCase();
+        return fullTitle === searchLower || // Exact match for full title
+               audio.title.bn.toLowerCase().includes(searchLower) ||
+               audio.title.en.toLowerCase().includes(searchLower) ||
+               audio.speaker.bn.toLowerCase().includes(searchLower) ||
+               audio.category.bn.toLowerCase().includes(searchLower);
+      });
+      console.log('After search filter:', filteredAudios.length); // Debug log
+    }
+
+    // Apply category filter
+    if (selected.category) {
+      console.log('Filtering by category:', selected.category); // Debug log
+      filteredAudios = filteredAudios.filter(audio => audio.category.bn === selected.category);
+      console.log('After category filter:', filteredAudios.length); // Debug log
+    }
+
+    // Apply speaker filter
+    if (selected.speaker) {
+      console.log('Filtering by speaker:', selected.speaker); // Debug log
+      filteredAudios = filteredAudios.filter(audio => audio.speaker.bn === selected.speaker);
+      console.log('After speaker filter:', filteredAudios.length); // Debug log
+    }
+
+    // Apply series filter
+    if (selected.series) {
+      console.log('Filtering by series:', selected.series); // Debug log
+      filteredAudios = filteredAudios.filter(audio => audio.series?.bn === selected.series);
+      console.log('After series filter:', filteredAudios.length); // Debug log
+    }
+
+    // Reset to first page when filters change
+    currentPage = 1;
+    
+    // Update category heading if category is selected
+    const categoryHeading = document.getElementById('categoryHeading');
+    if (selected.category) {
+      const matchingAudio = audiosData.find(audio => audio.category.bn === selected.category);
+      if (matchingAudio) {
+        categoryHeading.textContent = `ক্যাটাগরি: ${matchingAudio.category.bn} (${matchingAudio.category.en})`;
+      }
+    } else {
+      categoryHeading.textContent = '';
+    }
+
+    // Render the filtered results
+    console.log('Final filtered audios:', filteredAudios.length); // Debug log
+    paginateAudios(filteredAudios);
+  }
+
+  function updateDropdown(inputId, dropdownId, items) {
+    const dropdown = document.getElementById(dropdownId);
+    const input = document.getElementById(inputId);
+    const inputValue = input.value.toLowerCase();
+    
+    dropdown.innerHTML = '';
+    
+    if (items.length === 0) {
+      const div = document.createElement('div');
+      div.textContent = 'কোন ফলাফল পাওয়া যায়নি';
+      div.classList.add('px-2', 'py-1', 'text-gray-500', 'text-center');
+      dropdown.appendChild(div);
+      return;
+    }
+
+    const filteredItems = inputValue ? 
+      items.filter(item => item.toLowerCase().includes(inputValue)) : 
+      items;
+
+    filteredItems.sort((a, b) => a.localeCompare(b, 'bn'));
+
+    filteredItems.forEach(item => {
+      const div = document.createElement('div');
+      // Find the corresponding English text from audiosData
+      const audioWithItem = audiosData.find(audio => {
+        switch(inputId) {
+          case 'categoryInput': return audio.category.bn === item;
+          case 'speakerInput': return audio.speaker.bn === item;
+          case 'seriesInput': return audio.series?.bn === item;
+          default: return false;
+        }
+      });
+      
+      if (audioWithItem) {
+        const enText = inputId === 'categoryInput' ? audioWithItem.category.en :
+                      inputId === 'speakerInput' ? audioWithItem.speaker.en :
+                      audioWithItem.series?.en || '';
+        div.textContent = `${item} (${enText})`;
+      } else {
+        div.textContent = item;
+      }
+
+      div.classList.add('cursor-pointer', 'px-2', 'py-1', 'hover:bg-gray-100');
+      
+      if (selected[inputId.replace('Input', '')] === item) {
+        div.classList.add('bg-green-50');
+      }
+      
+      div.addEventListener('mousedown', () => {
+        const displayText = div.textContent;
+        input.value = displayText;
+        selected[inputId.replace('Input', '')] = item; // Keep storing just the Bengali text in selected
+        updateFilters();
+        dropdown.classList.remove('active');
+      });
+      dropdown.appendChild(div);
+    });
+  }
+
+  function attachInputEvents(inputId, dropdownId, type) {
+    const input = document.getElementById(inputId);
+    const dropdown = document.getElementById(dropdownId);
+    
+    input.addEventListener('input', () => {
+      // Get currently filtered audios based on other selections
+      let availableItems = [...audiosData];
+      
+      if (selected.category && type !== 'categories') {
+        availableItems = availableItems.filter(audio => audio.category.bn === selected.category);
+      }
+      if (selected.speaker && type !== 'speakers') {
+        availableItems = availableItems.filter(audio => audio.speaker.bn === selected.speaker);
+      }
+      if (selected.series && type !== 'series') {
+        availableItems = availableItems.filter(audio => audio.series?.bn === selected.series);
+      }
+
+      // Extract unique values for this filter type
+      const items = new Set(availableItems.map(audio => {
+        switch(type) {
+          case 'categories': return audio.category.bn;
+          case 'speakers': return audio.speaker.bn;
+          case 'series': return audio.series?.bn;
+          default: return '';
+        }
+      }));
+
+      updateDropdown(inputId, dropdownId, Array.from(items));
+      dropdown.classList.add('active');
+    });
+    
+    input.addEventListener('focus', () => {
+      // Same logic as input event
+      let availableItems = [...audiosData];
+      
+      if (selected.category && type !== 'categories') {
+        availableItems = availableItems.filter(audio => audio.category.bn === selected.category);
+      }
+      if (selected.speaker && type !== 'speakers') {
+        availableItems = availableItems.filter(audio => audio.speaker.bn === selected.speaker);
+      }
+      if (selected.series && type !== 'series') {
+        availableItems = availableItems.filter(audio => audio.series?.bn === selected.series);
+      }
+
+      const items = new Set(availableItems.map(audio => {
+        switch(type) {
+          case 'categories': return audio.category.bn;
+          case 'speakers': return audio.speaker.bn;
+          case 'series': return audio.series?.bn;
+          default: return '';
+        }
+      }));
+
+      updateDropdown(inputId, dropdownId, Array.from(items));
+      dropdown.classList.add('active');
+    });
+    
+    input.addEventListener('blur', () => {
+      setTimeout(() => dropdown.classList.remove('active'), 200);
+    });
+  }
+
+  // Toggle all audios button
+  document.getElementById("toggleAllBtn").addEventListener("click", () => {
+    const btn = document.getElementById("toggleAllBtn");
+    if (!isShowingAll) {
+      isShowingAll = true;
+      selected = { category: '', speaker: '', series: '' };
+      document.getElementById("categoryInput").value = '';
+      document.getElementById("speakerInput").value = '';
+      document.getElementById("seriesInput").value = '';
+      document.getElementById("audioSearch").value = '';
+      btn.textContent = "অডিও লুকান";
+      paginateAudios(audiosData);
+    } else {
+      isShowingAll = false;
+      btn.textContent = "সবগুলো অডিও দেখুন";
+      renderAudios([]);
+      document.getElementById("pagination").innerHTML = "";
+    }
+  });
+
+  // Initialize the application when the page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded');
+    
+    // Get category from URL if it exists
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    console.log('Category from URL:', categoryParam);
+
+    // Load initial data
+    fetch('audios.json')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
+      .then(data => {
+        if (!Array.isArray(data)) {
+          throw new Error('Data is not an array');
+        }
+        
+        console.log('Loaded audios data:', data.length);
+        audiosData = data;
+        processUniqueValues(data);
+        
+        // Set up filters
+        attachInputEvents('categoryInput', 'categoryDropdown', 'categories');
+        attachInputEvents('speakerInput', 'speakerDropdown', 'speakers');
+        attachInputEvents('seriesInput', 'seriesDropdown', 'series');
+        setupSearch();
+
+        // If category parameter exists, select it
+        if (categoryParam) {
+          selectCategory(categoryParam);
+        }
+      })
+      .catch(error => {
+        console.error('Error loading audios data:', error);
+        // Show error message to user
+        const container = document.getElementById('audio-list');
+        container.innerHTML = `
+          <div class="col-span-full text-center text-red-600 p-4">
+            <p>দুঃখিত, অডিও ডাটা লোড করতে সমস্যা হয়েছে। অনুগ্রহ করে পেজটি রিফ্রেশ করুন।</p>
+          </div>
+        `;
+      });
+  });
+
+  function setupSearch() {
+    const searchInput = document.getElementById("audioSearch");
+    const suggestionsBox = document.getElementById("audioSuggestions");
+    
+    searchInput.addEventListener("input", () => {
+      const searchQuery = searchInput.value.trim().toLowerCase();
+      suggestionsBox.classList.add("active");
+      
+      // Filter audios based on search query
+      let filteredAudios = audiosData;
+      if (searchQuery) {
+        filteredAudios = audiosData.filter(audio => 
+          audio.title.bn.toLowerCase().includes(searchQuery) ||
+          audio.title.en.toLowerCase().includes(searchQuery) ||
+          audio.speaker.bn.toLowerCase().includes(searchQuery) ||
+          audio.category.bn.toLowerCase().includes(searchQuery)
+        );
+      }
+      
+      updateAudioDropdown(filteredAudios);
+    });
+    
+    searchInput.addEventListener("focus", () => {
+      suggestionsBox.classList.add("active");
+      updateAudioDropdown(audiosData);
+    });
+    
+    searchInput.addEventListener("blur", () => {
+      setTimeout(() => suggestionsBox.classList.remove("active"), 200);
+    });
+
+    // Add keyboard navigation
+    searchInput.addEventListener('keydown', (e) => {
+      const items = suggestionsBox.querySelectorAll('div.cursor-pointer');
+      const currentIndex = Array.from(items).findIndex(item => item.classList.contains('bg-gray-100'));
+      
+      switch(e.key) {
+        case 'ArrowDown':
+          e.preventDefault();
+          if (currentIndex < items.length - 1) {
+            items[currentIndex]?.classList.remove('bg-gray-100');
+            items[currentIndex + 1]?.classList.add('bg-gray-100');
+            items[currentIndex + 1]?.scrollIntoView({ block: 'nearest' });
+          }
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          if (currentIndex > 0) {
+            items[currentIndex]?.classList.remove('bg-gray-100');
+            items[currentIndex - 1]?.classList.add('bg-gray-100');
+            items[currentIndex - 1]?.scrollIntoView({ block: 'nearest' });
+          }
+          break;
+        case 'Enter':
+          e.preventDefault();
+          const selectedItem = items[currentIndex];
+          if (selectedItem) {
+            const audioTitle = selectedItem.querySelector('.font-semibold').textContent;
+            searchInput.value = audioTitle;
+            updateFilters();
+            suggestionsBox.classList.remove("active");
+          }
+          break;
+        case 'Escape':
+          suggestionsBox.classList.remove("active");
+          searchInput.blur();
+          break;
+      }
+    });
+  }
+
+  function updateAudioDropdown(filteredAudios) {
+    const dropdown = document.getElementById("audioSuggestions");
+    const searchInput = document.getElementById("audioSearch");
+    const searchQuery = searchInput.value.trim().toLowerCase();
+    
+    dropdown.innerHTML = '';
+    
+    if (filteredAudios.length === 0) {
+      const div = document.createElement("div");
+      div.innerHTML = `<div class="px-2 py-1 text-gray-500 text-center">কোন ফলাফল পাওয়া যায়নি</div>`;
+      dropdown.appendChild(div);
+      return;
+    }
+
+    filteredAudios.forEach(audio => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <div class="flex flex-col">
+          <span class="font-semibold">${audio.title.bn} (${audio.title.en})</span>
+          <span class="text-sm text-gray-600">
+            <i class="fa-solid fa-microphone text-green-500 mr-1"></i>${audio.speaker.bn}
+            <span class="mx-1">•</span>
+            <i class="fas fa-folder-open text-green-500 mr-1"></i>${audio.category.bn}
+          </span>
+        </div>`;
+      div.classList.add('cursor-pointer', 'px-2', 'py-1', 'hover:bg-gray-100');
+      
+      div.addEventListener('mousedown', () => {
+        searchInput.value = `${audio.title.bn} (${audio.title.en})`;
+        updateFilters();
+        dropdown.classList.remove("active");
+      });
+      dropdown.appendChild(div);
+    });
+  }
+
+  function renderAudios(audios) {
+    console.log('Rendering audios:', audios.length); // Debug log
+    const container = document.getElementById('audio-list');
+    container.innerHTML = '';
+    
+    if (audios.length === 0) {
+      container.innerHTML = `
+        <div class="col-span-full text-center text-gray-600 p-4">
+          <p>কোন অডিও পাওয়া যায়নি।</p>
+        </div>
+      `;
+      return;
+    }
+
+audios.forEach(audio => {
+  const playerHTML = `
+    <div class="bg-white rounded-2xl shadow-md p-5 border border-gray-200 transition hover:shadow-lg text-center flex flex-col justify-between">
+      <div class="mb-4">
+        <i class="fas fa-headphones text-green-600 text-5xl mb-4"></i>
+        <h2 class="text-xl font-semibold mb-1 text-green-700">${audio.title.bn}</h2>
+        <p class="text-sm text-gray-600">${audio.title.en}</p>
+        <p class="mt-2"><i class="fa-solid fa-microphone text-green-500"></i> বক্তা: ${audio.speaker.bn}</p>
+        <p><i class="fas fa-folder-open text-green-500"></i> ক্যাটাগরি: ${audio.category.bn}</p>
+        ${audio.series ? `<p><i class="fas fa-list text-green-500"></i> সিরিজ: ${audio.series.bn}</p>` : ''}
+        <p><i class="fas fa-calendar text-green-600"></i> তারিখ: ${audio.upload_date}</p>
+      </div>
+      <div class="mt-4 space-y-3">
+        <audio controls src="${audio.audio_url}" preload="metadata" class="w-full"></audio>
+        <div class="flex justify-center gap-2">
+          <a href="${audio.download_url}" target="_blank" class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+            <i class="fas fa-download mr-1"></i> ডাউনলোড
+          </a>
+          <button onclick="shareAudioCard('${audio.title.bn}', '${audio.speaker.bn}', '${audio.category.bn}', '${audio.series ? audio.series.bn : ''}', '${audio.upload_date}', '${audio.audio_url}', this)" class="px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition">
+            <i class="fas fa-share-alt mr-1"></i> শেয়ার
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+  container.innerHTML += playerHTML;
+});    
+
+  }
+
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+  }
+
+  function togglePlay(index) {
+    const audio = document.querySelector(`#player-${index} audio`);
+    const playBtn = document.getElementById(`playBtn-${index}`);
+    const playIcon = document.querySelector(`.play-icon-${index}`);
+    
+    if (playBtn.classList.contains('error')) {
+      return; // Don't do anything if there's an error
+    }
+    
+    if (audio.paused) {
+      // Pause all other audio players first
+      document.querySelectorAll('.hidden-audio').forEach((otherAudio, idx) => {
+        if (idx !== index) {
+          otherAudio.pause();
+          const otherIcon = document.querySelector(`.play-icon-${idx}`);
+          otherIcon.classList.remove('fa-pause');
+          otherIcon.classList.add('fa-play');
+        }
+      });
+      
+      // Try to play the audio
+      audio.play().catch(error => {
+        handleAudioError(index);
+      });
+      
+      playIcon.classList.remove('fa-play');
+      playIcon.classList.add('fa-pause');
+    } else {
+      audio.pause();
+      playIcon.classList.remove('fa-pause');
+      playIcon.classList.add('fa-play');
+    }
+  }
+
+  function seek(event, index) {
+    const audio = document.querySelector(`#player-${index} audio`);
+    const progressBar = event.currentTarget;
+    const handle = progressBar.querySelector('.progress-handle');
+    const rect = progressBar.getBoundingClientRect();
+
+    const updateProgress = (clientX) => {
+      const pos = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+      audio.currentTime = pos * audio.duration;
+    };
+
+    const handleStart = (e) => {
+      const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+      updateProgress(clientX);
+      handle.classList.add('dragging');
+    };
+
+    const handleMove = (e) => {
+      if (!handle.classList.contains('dragging')) return;
+      const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+      updateProgress(clientX);
+      e.preventDefault();
+    };
+
+    const handleEnd = () => {
+      handle.classList.remove('dragging');
+    };
+
+    // Touch events
+    handle.addEventListener('touchstart', handleStart);
+    document.addEventListener('touchmove', handleMove);
+    document.addEventListener('touchend', handleEnd);
+
+    // Mouse events
+    handle.addEventListener('mousedown', handleStart);
+    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('mouseup', handleEnd);
+
+    // Click on progress bar
+    if (event.target === progressBar) {
+      updateProgress(event.clientX);
+    }
+  }
+
+  function changeVolume(value, index) {
+    const audio = document.querySelector(`#player-${index} audio`);
+    audio.volume = value / 100;
+  }
+
+  function toggleMute(index) {
+    const audio = document.querySelector(`#player-${index} audio`);
+    const volumeBtn = document.querySelector(`#player-${index} .volume-btn`);
+    const volumeSlider = document.querySelector(`#player-${index} .volume-slider`);
+    
+    if (audio.muted) {
+      audio.muted = false;
+      volumeBtn.classList.remove('fa-volume-mute');
+      volumeBtn.classList.add('fa-volume-up');
+      volumeSlider.value = audio.volume * 100;
+    } else {
+      audio.muted = true;
+      volumeBtn.classList.remove('fa-volume-up');
+      volumeBtn.classList.add('fa-volume-mute');
+      volumeSlider.value = 0;
+    }
+  }
+
+  function changeSpeed(value, index) {
+    const audio = document.querySelector(`#player-${index} audio`);
+    audio.playbackRate = parseFloat(value);
+  }
+
+  function openAudioModal(audioUrl, title, speaker) {
+    const modal = document.getElementById("audioModal");
+    const player = document.getElementById("audioPlayer");
+    const titleEl = document.getElementById("audioTitle");
+    const speakerEl = document.getElementById("audioSpeaker");
+    
+    if (audioUrl) {
+      player.src = audioUrl;
+      titleEl.textContent = title;
+      speakerEl.textContent = `বক্তা: ${speaker}`;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      player.play();
+    }
+  }
+  
+  function closeAudioModal() {
+    const modal = document.getElementById("audioModal");
+    const player = document.getElementById("audioPlayer");
+    player.pause();
+    player.src = "";
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+
+  function paginateAudios(audios) {
+    if (!audios || audios.length === 0) {
+      renderAudios([]);
+      document.getElementById("pagination").innerHTML = "";
+      return;
+    }
+
+    const totalPages = Math.ceil(audios.length / audiosPerPage);
+    const start = (currentPage - 1) * audiosPerPage;
+    const end = Math.min(start + audiosPerPage, audios.length);
+    const paginatedAudios = audios.slice(start, end);
+    
+    renderAudios(paginatedAudios);
+    renderPaginationButtons(audios.length);
+  }
+  
+  function renderPaginationButtons(totalAudios) {
+    const pagination = document.getElementById("pagination");
+    pagination.innerHTML = "";
+    
+    const totalPages = Math.ceil(totalAudios / audiosPerPage);
+    if (totalPages <= 1) return;
+    
+    const prevBtn = document.createElement("button");
+    prevBtn.textContent = "« পূর্ববর্তী";
+    prevBtn.className = `px-3 py-1 border rounded text-sm ${
+      currentPage === 1 
+        ? "bg-gray-100 text-gray-400 cursor-not-allowed" 
+        : "bg-white text-green-700 hover:bg-green-50"
+    }`;
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (currentPage > 1) {
+        currentPage--;
+        let filteredAudios = getFilteredAudios();
+        paginateAudios(filteredAudios);
+      }
+    });
+    pagination.appendChild(prevBtn);
+    
+    let startPage = Math.max(1, currentPage - 2);
+    let endPage = Math.min(startPage + 4, totalPages);
+    
+    if (endPage - startPage < 4) {
+      startPage = Math.max(1, endPage - 4);
+    }
+    
+    for (let i = startPage; i <= endPage; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      btn.className = `px-3 py-1 border rounded text-sm ${
+        i === currentPage 
+          ? "bg-green-600 text-white" 
+          : "bg-white text-green-700 hover:bg-green-50"
+      }`;
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        currentPage = i;
+        let filteredAudios = getFilteredAudios();
+        paginateAudios(filteredAudios);
+      });
+      pagination.appendChild(btn);
+    }
+    
+    const nextBtn = document.createElement("button");
+    nextBtn.textContent = "পরবর্তী »";
+    nextBtn.className = `px-3 py-1 border rounded text-sm ${
+      currentPage === totalPages 
+        ? "bg-gray-100 text-gray-400 cursor-not-allowed" 
+        : "bg-white text-green-700 hover:bg-green-50"
+    }`;
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (currentPage < totalPages) {
+        currentPage++;
+        let filteredAudios = getFilteredAudios();
+        paginateAudios(filteredAudios);
+      }
+    });
+    pagination.appendChild(nextBtn);
+  }
+
+  function getFilteredAudios() {
+    let filteredAudios = [...audiosData];
+
+    const searchQuery = document.getElementById("audioSearch").value.trim().toLowerCase();
+    if (searchQuery) {
+      filteredAudios = filteredAudios.filter(audio => 
+        audio.title.bn.toLowerCase().includes(searchQuery) ||
+        audio.title.en.toLowerCase().includes(searchQuery) ||
+        audio.speaker.bn.toLowerCase().includes(searchQuery) ||
+        audio.category.bn.toLowerCase().includes(searchQuery)
+      );
+    }
+
+    if (selected.category) {
+      filteredAudios = filteredAudios.filter(audio => audio.category.bn === selected.category);
+    }
+    if (selected.speaker) {
+      filteredAudios = filteredAudios.filter(audio => audio.speaker.bn === selected.speaker);
+    }
+    if (selected.series) {
+      filteredAudios = filteredAudios.filter(audio => audio.series?.bn === selected.series);
+    }
+
+    return filteredAudios;
+  }
+
+  function clearAudioSearch() {
+    const searchInput = document.getElementById("audioSearch");
+    searchInput.value = '';
+    updateFilters();
+  }
+
+  function clearFilter(inputId) {
+    const input = document.getElementById(inputId);
+    input.value = '';
+    selected[inputId.replace('Input', '')] = '';
+    updateFilters();
+  }
+
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  document.getElementById('menuToggle').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  document.addEventListener('click', function(e) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuToggle = document.getElementById('menuToggle');
+    
+    if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+      mobileMenu.classList.add('hidden');
+    }
+  });
+
+  document.getElementById('audioModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeAudioModal();
+    }
+  });
+
+  function handleAudioLoaded(index) {
+    const playBtn = document.getElementById(`playBtn-${index}`);
+    const errorMsg = document.getElementById(`error-${index}`);
+    
+    playBtn.classList.remove('error');
+    errorMsg.classList.remove('show');
+  }
+
+  function handleAudioError(index) {
+    const playBtn = document.getElementById(`playBtn-${index}`);
+    const errorMsg = document.getElementById(`error-${index}`);
+    const playIcon = document.querySelector(`.play-icon-${index}`);
+    
+    playBtn.classList.add('error');
+    errorMsg.classList.add('show');
+    playIcon.classList.remove('fa-play', 'fa-pause');
+    playIcon.classList.add('fa-exclamation-triangle');
+  }
+
+  function getFilteredOptions(filterType) {
+    let filteredAudios = [...audiosData];
+    
+    if (selected.category && filterType !== 'categories') {
+      filteredAudios = filteredAudios.filter(audio => audio.category.bn === selected.category);
+    }
+    if (selected.speaker && filterType !== 'speakers') {
+      filteredAudios = filteredAudios.filter(audio => audio.speaker.bn === selected.speaker);
+    }
+    if (selected.series && filterType !== 'series') {
+      filteredAudios = filteredAudios.filter(audio => audio.series?.bn === selected.series);
+    }
+    
+    const uniqueValues = new Set();
+    filteredAudios.forEach(audio => {
+      switch(filterType) {
+        case 'categories':
+          uniqueValues.add(audio.category.bn);
+          break;
+        case 'speakers':
+          uniqueValues.add(audio.speaker.bn);
+          break;
+        case 'series':
+          if (audio.series?.bn) {
+            uniqueValues.add(audio.series.bn);
+          }
+          break;
+        case 'titles':
+          uniqueValues.add(audio.title.bn);
+          break;
+      }
+    });
+    
+    return Array.from(uniqueValues);
+  }
+
+  function updateRelatedDropdowns(changedInputId) {
+    const inputs = {
+      categoryInput: 'categories',
+      speakerInput: 'speakers',
+      seriesInput: 'series'
+    };
+    
+    Object.entries(inputs).forEach(([inputId, filterType]) => {
+      if (inputId !== changedInputId) {
+        const input = document.getElementById(inputId);
+        updateDropdown(inputId, `${filterType.slice(0, -1)}Dropdown`, filterType, input.value);
+      }
+    });
+  }
+
+  // Add event listener for URL changes
+  window.addEventListener('popstate', function(event) {
+    const params = new URLSearchParams(window.location.search);
+    const categoryParam = params.get('category');
+    
+    if (categoryParam) {
+      const decodedCategory = decodeURIComponent(categoryParam);
+      selected.category = decodedCategory;
+      document.getElementById('categoryInput').value = decodedCategory;
+      isShowingAll = true;
+      document.getElementById("toggleAllBtn").textContent = "অডিও লুকান";
+      updateFilters();
+    } else {
+      selected.category = '';
+      document.getElementById('categoryInput').value = '';
+      isShowingAll = false;
+      document.getElementById("toggleAllBtn").textContent = "সবগুলো অডিও দেখুন";
+      updateFilters();
+    }
+  });
+
+  // Add event listener for category links
+  document.addEventListener('DOMContentLoaded', function() {
+    const categoryLinks = document.querySelectorAll('a[href^="?category="]');
+    categoryLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const categoryParam = new URLSearchParams(this.href.split('?')[1]).get('category');
+        if (categoryParam) {
+          const decodedCategory = decodeURIComponent(categoryParam);
+          selectCategory(decodedCategory);
+        }
+      });
+    });
+
+    // Initialize with URL parameter if present
+    const params = new URLSearchParams(window.location.search);
+    const categoryParam = params.get('category');
+    if (categoryParam) {
+      const decodedCategory = decodeURIComponent(categoryParam);
+      selectCategory(decodedCategory);
+    }
+  });
+
+  // Add this new function to handle category selection
+  function selectCategory(category) {
+    console.log('Selecting category:', category);
+    
+    // Find the matching audio for this category
+    const matchingAudio = audiosData.find(audio => 
+      audio.category.en.toLowerCase() === category.toLowerCase() ||
+      audio.category.bn === category
+    );
+    
+    if (!matchingAudio) {
+      console.error('No matching audio found for category:', category);
+      return;
+    }
+    
+    // Update selected state with Bengali category name
+    selected.category = matchingAudio.category.bn;
+    
+    // Update input field with both Bengali and English names
+    const categoryInput = document.getElementById('categoryInput');
+    categoryInput.value = `${matchingAudio.category.bn} (${matchingAudio.category.en})`;
+    
+    // Update URL with English category name for better URL readability
+    const newUrl = `${window.location.pathname}?category=${encodeURIComponent(matchingAudio.category.en)}`;
+    window.history.pushState({ category: matchingAudio.category.en }, '', newUrl);
+    
+    // Show all audios
+    isShowingAll = true;
+    const toggleBtn = document.getElementById("toggleAllBtn");
+    toggleBtn.textContent = "অডিও লুকান";
+    
+    console.log('Before updateFilters - selected:', selected);
+    console.log('Before updateFilters - isShowingAll:', isShowingAll);
+    
+    // Update filters and display
+    updateFilters();
+    
+    // Scroll to results
+    document.getElementById('audio-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+
+
+<script>
+  function shareAudioCard(title, speaker, category, series, date, url, button) {
+    const fullText = `🎧 *${title}*\n\n📢 বক্তা: ${speaker}\n📁 ক্যাটাগরি: ${category}\n` +
+      (series ? `📚 সিরিজ: ${series}\n` : '') +
+      `📅 তারিখ: ${date}\n🔗 শুনুন: ${url}`;
+    
+    if (navigator.share) {
+      navigator.share({
+        title: title,
+        text: fullText,
+        url: url
+      }).catch(err => console.error("Share failed:", err));
+    } else {
+      navigator.clipboard.writeText(fullText).then(() => {
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check mr-1"></i> কপি হয়েছে';
+        button.disabled = true;
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.disabled = false;
+        }, 2000);
+      }).catch(() => {
+        alert("শেয়ার কপি করা যায়নি");
+      });
+    }
+  }
+</script>
+</body>
+</html>

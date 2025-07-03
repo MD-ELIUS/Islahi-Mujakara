@@ -1,0 +1,32 @@
+[
+  {
+    "name": "সাময়িক প্রসঙ্গ",
+    "slug": "current",
+    "description": "বর্তমান সময়ের গুরুত্বপূর্ণ ইসলামি বিষয়াবলি নিয়ে লেখা",
+    "link": "articles.html?category=সাময়িক"
+  },
+  {
+    "name": "আদর্শ জীবন",
+    "slug": "lifestyle",
+    "description": "একজন মুসলিমের আদর্শ জীবন ও আচরণ বিষয়ক প্রবন্ধ",
+    "link": "articles.html?category=আদর্শ"
+  },
+  {
+    "name": "তাবলীগ ও দাওয়াহ",
+    "slug": "tabligh",
+    "description": "তাবলীগ জামাত ও ইসলামের দাওয়াহ সংক্রান্ত প্রবন্ধ",
+    "link": "articles.html?category=তাবলীগ"
+  },
+  {
+    "name": "আকিদা বিষয়ক",
+    "slug": "aqidah",
+    "description": "বিশ্বাস ও আকিদা সংশ্লিষ্ট প্রবন্ধসমূহ",
+    "link": "articles.html?category=আকিদা"
+  },
+  {
+    "name": "নারী ও পরিবার",
+    "slug": "family",
+    "description": "নারী, পরিবার ও সামাজিক দিক নিয়ে ইসলামি আলোচনা",
+    "link": "articles.html?category=নারী"
+  }
+]

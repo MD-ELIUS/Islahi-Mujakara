@@ -1,0 +1,32 @@
+[
+  {
+    "name": "তাফসির ও কুরআন",
+    "slug": "tafsir",
+    "description": "পবিত্র কুরআনের তাফসির ও অনুবাদের বই পড়ুন",
+    "link": "books.html?category=তাফসির"
+  },
+  {
+    "name": "হাদীস ও সুন্নাহ",
+    "slug": "hadith",
+    "description": "বিশুদ্ধ হাদীসসমূহ সহজ ভাষায় অনুধাবন করুন",
+    "link": "books.html?category=হাদীস"
+  },
+  {
+    "name": "ঈমান ও আকিদা",
+    "slug": "aqidah",
+    "description": "ইসলামের মৌলিক বিশ্বাস ও বিশুদ্ধ আকিদা বিষয়ক বইসমূহ",
+    "link": "book.html?category=ঈমান ও আকিদা"
+  },
+  {
+    "name": "ইসলামী ফিকহ",
+    "slug": "fiqh",
+    "description": "ইসলামী আইন ও বিধানের বইসমূহ",
+    "link": "books.html?category=ফিকহ"
+  },
+  {
+    "name": "আত্মশুদ্ধি ও তাসাউফ",
+    "slug": "tasawwuf",
+    "description": "আত্মশুদ্ধি, তাযকিয়া ও আধ্যাত্মিকতার আলোকে রচিত গ্রন্থ",
+    "link": "books.html?category=তাসাউফ"
+  }
+]

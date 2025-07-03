@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en" lang="ar" lang="bn">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.maateen.me/charu-chandan-3d/font.css" rel="stylesheet">
+  <link href="https://fonts.maateen.me/charu-chandan/font.css" rel="stylesheet">
+  <link href="https://fonts.maateen.me/ekushey-lohit/font.css" rel="stylesheet">
+  <link href="https://fonts.maateen.me/charukola-ultra-light/font.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/sh4hids/bangla-web-fonts/bensen-handwriting/stylesheet.css" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/sh4hids/bangla-web-fonts/solaimanlipi/stylesheet.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/earlyaccess/lateef.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+ 
+<script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" type="text/css" href="./style.css">
+   <style>
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hide scrollbar style */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+      
+      <title >
+        ইসলাহী মুজাকারা 
+      </title>
+     </head>
+	 
+	 
+	 <body class="bg-white">
+	 
+	 
+	<div class="sticky top-0 z-50 w-full bg-green-800 text-white text-sm py-2 px-4 shadow-md">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <span><i class="fa-solid fa-feather-pointed text-green-600 mr-2"></i>আসুন অন্তরকে পরিশুদ্ধ করি</span>
+    </div>
+    <div class="flex gap-3">
+      <a href="#" class="hover:text-green-300"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="hover:text-green-300"><i class="fab fa-youtube"></i></a>
+      <a href="#" class="hover:text-green-300"><i class="fab fa-telegram"></i></a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Sticky Top Navbar -->
+  
+  <!-- Sticky Top Navbar -->
+<header class="sticky top-0 z-50 bg-white shadow-md border-b border-green-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      
+      <!-- Logo & Site Title -->
+      <a href="index.html" class="flex items-center gap-2 px-4 py-2 bg-green-100 hover:bg-green-200 text-green-800 font-bold rounded-xl shadow shadow-green-300 transition duration-200">
+        <i class="fa-solid fa-mosque text-green-600 text-lg"></i>
+        <span class="text-lg">ইসলাহী মুজাকারা</span>
+      </a>
+      
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center gap-4 text-green-800 font-semibold text-sm bg-white px-4 py-2 rounded-xl shadow border border-green-100">
+        <a href="index.html" class="px-3 py-1 rounded hover:bg-green-100 transition">হোম</a>
+        <a href="quran.html" class="px-3 py-1 rounded hover:bg-green-100 transition">কুরআন</a>
+        <a href="book.html" class="px-3 py-1 rounded hover:bg-green-100 transition">বই</a>
+        <a href="audio.html" class="px-3 py-1 rounded hover:bg-green-100 transition">অডিও</a>
+        <a href="article.html" class="px-3 py-1 rounded hover:bg-green-100 transition">প্রবন্ধ</a>
+        <a href="contact.html" class="px-3 py-1 rounded hover:bg-green-100 transition">যোগাযোগ</a>
+      </nav>
+      
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="menuToggle" class="text-green-700 text-2xl focus:outline-none">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-green-50 px-4 pb-4 rounded-b-xl shadow border-t border-green-100">
+    <a href="#" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">হোম</a>
+    <a href="quran.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">কুরআন</a>
+    <a href="book.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">বই</a>
+    <a href="audio.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">অডিও</a>
+    <a href="article.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">প্রবন্ধ</a>
+    <a href="contact.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">যোগাযোগ</a>
+  </div>
+</header>
+  
+  
+  
+  
+<!-- Banner Section start here --> 
+  
+<section class="bg-gradient-to-br from-green-100 to-green-50 py-10 px-4 md:px-10 rounded-b-xl shadow-sm">
+  
+  
+  <!-- ✅ আগের মতো দুই কলাম -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    
+    <!-- Quran Ayah & Audio (Left) — অপরিবর্তিত --><div class="bg-gradient-to-br from-green-50 via-white to-green-100 border border-green-200 rounded-xl shadow-lg p-6 space-y-5 text-center">
+  
+  <h3 class="text-xl font-bold text-green-800 mb-2 flex justify-center items-center gap-2">
+    <i class="fa-solid fa-quran text-green-600"></i> পবিত্র কুরআনের বার্তা
+  </h3>
+  
+  <!-- Arabic Ayah -->
+  <div class="text-2xl font-semibold text-green-900 leading-loose" dir="rtl">
+    ﴿ إِنَّ مَعَ الْعُسْرِ يُسْرًا ﴾
+  </div>
+  
+  <!-- Bengali Translation -->
+  <div class="text-sm text-green-800 font-medium italic max-w-md mx-auto">
+    “নিশ্চয়ই কষ্টের সাথে রয়েছে স্বস্তি।”<br>
+    <span class="text-xs text-green-700">[সূরা ইনশিরাহ, আয়াত ৬]</span>
+  </div>
+  
+  
+  <!-- Arabic Ayah -->
+  <div class="text-2xl font-semibold text-green-900 leading-loose" dir="rtl">
+    ﴿ إِنَّ مَعَ الْعُسْرِ يُسْرًا ﴾
+  </div>
+  
+  <!-- Bengali Translation -->
+  <div class="text-sm text-green-800 font-medium italic max-w-md mx-auto">
+    “নিশ্চয়ই কষ্টের সাথে রয়েছে স্বস্তি।”<br>
+    <span class="text-xs text-green-700">[সূরা ইনশিরাহ, আয়াত ৬]</span>
+  </div>
+  
+  
+  
+  
+  <!-- Intro Audio Player -->
+  <div class="text-center mt-6">
+    <button id="toggleIntro" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm shadow-md transition">
+      <i id="introIcon" class="fa-solid fa-pause"></i>
+      অডিও বন্ধ করুন
+    </button>
+    
+    <audio id="introAudio" autoplay muted>
+      <source src="./audio/introductory.mp3" type="audio/mpeg">
+      আপনার ব্রাউজার অডিও সমর্থন করে না।
+    </audio>
+  </div>
+  
+</div>
+
+
+    <!-- Prayer Card (Right) start here-->
+	
+<div id="prayer-card" class="bg-gradient-to-br from-white via-green-50 to-white border border-green-200 rounded-xl shadow-lg p-6 space-y-5 text-center mx-auto max-w-md">
+  
+    <!-- ✅ তারিখ ও দিনের অংশ সবার উপরে -->
+  <div id="date-banner" class="text-center mb-8 text-green-800 space-y-1 text-sm sm:text-base font-medium">
+<div id="date-section" class="border-t border-green-100 pt-4 text-green-900 space-y-1 text-sm">
+  <p><i class="fa-solid fa-calendar-day text-green-600 mr-2"></i>আজ: <strong>লোড হচ্ছে...</strong></p>
+  <p><i class="fa-regular fa-calendar text-green-600 mr-2"></i>ইংরেজি: </p>
+  <p><i class="fa-solid fa-calendar-days text-green-600 mr-2"></i>বাংলা: </p>
+  <p><i class="fa-solid fa-moon text-green-600 mr-2"></i>হিজরি: </p>
+</div>
+  </div>
+
+  
+  
+  <h3 class="text-xl font-bold text-green-800 flex justify-center items-center gap-2">
+    <i class="fa-solid fa-mosque text-green-600"></i> আজকের নামাজের সময়সূচি
+  </h3>
+  
+  <div id="prayer-times" class="space-y-3 text-sm text-green-900">
+    <div>লোড হচ্ছে...</div>
+  </div>
+  
+
+<div id="sehri-iftar-times" class="bg-green-50 rounded-md p-3 border border-green-100 shadow-sm text-green-900 text-sm">
+  <div class="flex justify-between items-center space-x-4">
+    <div class="flex items-center gap-2">
+      <i class="fa-solid fa-utensils text-green-500"></i>
+      <span><strong>সেহরি শেষ:</strong> <span id="sehri-time">লোড হচ্ছে...</span></span>
+    </div>
+    <div class="flex items-center gap-2">
+      <i class="fa-solid fa-mug-hot text-green-500"></i>
+      <span><strong>ইফতার:</strong> <span id="iftar-time">লোড হচ্ছে...</span></span>
+    </div>
+  </div>
+</div>
+  
+ <!-- Prayer Card (Right) start here--> 
+ 
+    
+  </div>
+</section>
+
+<!-- Banner Section end here --> 
+  
+<div id="ad-marquee" class="bg-green-50 border-y border-green-300 py-2 text-green-800 font-medium overflow-hidden">
+  <marquee behavior="scroll" direction="left" scrollamount="3" id="ad-marquee-text">
+    বিজ্ঞাপন লোড হচ্ছে...
+  </marquee>
+</div>
+
+
+
+
+  <div id="modal-container"></div>
+
+
+  <!-- Radio Player Section start here -->
+  
+      
+ <section class="w-full bg-gradient-to-br from-green-50 to-green-100 rounded-xl shadow-md p-6 text-center max-w-xl mx-auto my-6 ">
+  <h2 class="text-2xl sm:text-3xl font-semibold text-green-800 mb-2 flex justify-center items-center gap-2">
+    Islahi Mujakara
+    <i class="fa-solid fa-radio text-green-600 text-xl"></i>
+  </h2>
+  <p class="text-green-700 text-sm sm:text-base mb-4 italic">Streaming 24/7 – Let's purify our hearts.</p>
+  
+  <!-- Play/Pause + Mute/Unmute Buttons -->
+  <div class="flex justify-center items-center gap-4 mt-4">
+    <button id="toggleRadio" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm shadow-md transition">
+      <i id="radioIcon" class="fa-solid fa-play"></i> রেডিও চালু করুন
+    </button>
+    
+    <button id="muteRadio" class="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-full text-sm shadow-md transition">
+      <i id="muteIcon" class="fa-solid fa-volume-xmark"></i> সাউন্ড বন্ধ
+    </button>
+  </div>
+  
+  <!-- Live Radio Audio -->
+  <audio id="liveRadioAudio">
+    <source src="https://stream.zeno.fm/u7e8g5a7ma0uv.mp3" type="audio/mpeg">
+    আপনার ব্রাউজার অডিও সমর্থন করে না।
+  </audio>
+ 
+ <!-- Now Playing Info -->
+
+<div style="text-align: center; background-color: transparent; padding: 20px; border-radius: 10px;">
+  <p id="bayan-status" style="font-size: 14px; color: #155724; margin-bottom: 5px;">লোড হচ্ছে...</p>
+  <h2 id="bayan-title" style="font-size: 20px; font-weight: bold; color: #0b5138;">লাইভ শিরোনাম লোড হচ্ছে...</h2>
+</div>
+
+
+
+ <!-- Warning Alert -->
+<div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-4 mt-4 rounded-md shadow-sm text-sm flex items-start gap-2">
+  <i class="fa-solid fa-circle-exclamation mt-1 text-yellow-500"></i>
+  <div>
+    <strong>দ্রষ্টব্য:</strong> রেডিও চালুর প্রথম ৩০ সেকেন্ড অটোমেটিকভাবে <span class="font-semibold">মিউট</span> থাকবে, কারণ এই সময় একটি <span class="font-semibold">মিউজিকসহ বিজ্ঞাপন</span> চলে।
+  </div>
+</div>
+ 
+ 
+ 
+ 
+</section>
+
+
+  
+  <!-- Radio Player Section end here -->
+  
+  
+  
+  
+  
+  
+ <!-- Quran Section start here -->
+  
+ 
+<section class="bg-gradient-to-br from-green-100 to-green-50 py-10 px-4 md:px-10 rounded-b-xl shadow-sm text-center">
+  <div class="max-w-7xl mx-auto ">
+  
+  
+  
+   <!-- Section Heading -->
+<div class="text-center mb-10">
+  <h2 class="inline-block text-3xl sm:text-4xl font-bold px-8 py-4 rounded-xl bg-gradient-to-r from-green-100 via-green-50 to-green-100 shadow-md border-l-4 border-r-4 border-green-500 text-green-700" style="font-family: 'Charu Chandan', sans-serif;">
+   কুরআন
+    <i class="fas fa-book-reader animate-pulse text-green-600 ml-2"></i>
+  </h2>
+</div>
+
+
+	
+<!-- quran quote Section start here -->
+ 
+<section id="quote-slider" class="w-full flex justify-center text-center">
+  <div id="quran-quote" class="w-full text-gray-800">
+    লোড হচ্ছে...
+  </div>
+</section>
+  
+<!-- quran quote Section end here -->  
+  	
+	
+<!-- Quran Cards Grid Start here -->
+
+<div class="relative">
+  <!-- Left scroll button (only visible on desktop) -->
+  <button class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-green-500 hover:bg-green-600 text-white rounded-full w-8 h-8 shadow-lg transform hover:scale-105 transition-all">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  
+  <div id="scrollingContainer-quran" class="overflow-x-auto whitespace-nowrap scroll-smooth cursor-grab active:cursor-grabbing my-10 scrollbar-hide">
+    <div id="scrollingCards-quran" class="inline-flex gap-6 px-4 py-2"></div>
+  </div>
+  
+  <!-- Right scroll button (only visible on desktop) -->
+  <button class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-green-500 hover:bg-green-600 text-white rounded-full w-8 h-8 shadow-lg transform hover:scale-105 transition-all">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+</div>
+
+<!-- Quran Cards Grid End  here -->
+
+	
+<!--  See More option start here -->	
+	
+<div class="mt-8 flex justify-center">
+  <a href="/your-link-here" class="flex items-center gap-2 text-white py-2 px-6 rounded-lg text-lg bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-lg transform hover:scale-105 transition duration-300">
+    আরও দেখুন
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
+</div>
+
+<!-- See More option end here -->
+	
+  </div>
+</section>
+  
+  <!-- Quran Section end here -->
+
+
+
+  <!-- Quran ADs Section start here -->
+
+<section class="bg-white py-10 px-4 sm:px-6 md:px-10">
+  <div id="quran-ad" class="bg-[#f3fefb] rounded-xl shadow-md px-6 py-6 max-w-2xl mx-auto text-green-800 text-center">
+    <!-- ad content -->
+  </div>
+</section>
+  
+  <!--Quran ADs Section end here -->
+
+  
+  
+  <!-- Audio Section start here -->
+  
+<section class="bg-gradient-to-br from-green-100 to-green-50 py-10 px-4 md:px-10 rounded-b-xl shadow-sm text-center">
+  <div class="max-w-7xl mx-auto ">
+    <!-- Section Heading -->
+<div class="text-center mb-10">
+  <h2 class="inline-block text-3xl sm:text-4xl font-bold px-8 py-4 rounded-xl bg-gradient-to-r from-green-100 via-green-50 to-green-100 shadow-md border-l-4 border-r-4 border-green-500 text-green-700" style="font-family: 'Charu Chandan', sans-serif;">
+    বয়ান শুনুন
+    <i class="fa-solid fa-microphone animate-pulse text-green-600 ml-2"></i>
+  </h2>
+</div>
+
+	
+<!-- Audio quote Section start here -->
+<section id="quote-slider" class="w-full flex justify-center text-center">
+  <div id="audio-quote" class="w-full text-gray-800">
+    লোড হচ্ছে...
+  </div>
+</section> 
+<!-- Audio quote Section end here -->  
+  		
+	
+   <!-- Audio Cards Grid Start -->
+<div class="relative">
+  <!-- Left scroll button (only visible on desktop) -->
+  <button class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-green-500 hover:bg-green-600 text-white rounded-full w-8 h-8 shadow-lg transform hover:scale-105 transition-all">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  
+  <div id="scrollingContainer-audio" class="overflow-x-auto whitespace-nowrap scroll-smooth cursor-grab active:cursor-grabbing my-10 scrollbar-hide">
+    <div id="scrollingCards-audio" class="inline-flex gap-6 px-4 py-2"></div>
+  </div>
+  
+  <!-- Right scroll button (only visible on desktop) -->
+  <button class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-green-500 hover:bg-green-600 text-white rounded-full w-8 h-8 shadow-lg transform hover:scale-105 transition-all">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+</div>
+</div>
+<!-- Audio Cards Grid End -->
+
+
+<!-- See More option start here -->
+	<div class="mt-8 flex justify-center">
+  <a href="/your-link-here" class="flex items-center gap-2 text-white py-2 px-6 rounded-lg text-lg bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-lg transform hover:scale-105 transition duration-300">
+    আরও দেখুন
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
+</div>
+<!-- See More option end here -->
+
+	
+  </div>
+</section>
+  
+  
+  
+  <!-- Audio Section end here -->
+
+
+  <!--Audio Ads Section start here -->
+
+<section class="bg-white py-10 px-4 sm:px-6 md:px-10">
+  <div id="audio-ad" class="bg-[#f3fefb] rounded-xl shadow-md px-6 py-6 max-w-2xl mx-auto text-green-800 text-center">
+    <!-- ad content -->
+  </div>
+</section>
+  
+  <!-- Audio Ads Section end here -->
+  
+
+
+   
+   
+       
+  <!-- Ebook-card Section start here -->
+  
+ 
+<section class="bg-gradient-to-br from-green-100 to-green-50 py-10 px-4 md:px-10 rounded-b-xl shadow-sm text-center">
+  <div class="max-w-7xl mx-auto ">
+  <div class="max-w-7xl mx-auto ">
+       <!-- Section Heading -->
+<div class="text-center mb-10">
+  <h2 class="inline-block text-3xl sm:text-4xl font-bold px-8 py-4 rounded-xl bg-gradient-to-r from-green-100 via-green-50 to-green-100 shadow-md border-l-4 border-r-4 border-green-500 text-green-700" style="font-family: 'Charu Chandan', sans-serif;">
+   বই  পড়ুন
+    <i class="fas fa-book-reader animate-pulse text-green-600 ml-2"></i>
+  </h2>
+</div>
+	
+<!-- Book quotes Section start here -->
+  
+ <section id="quote-slider" class="w-full flex justify-center text-center">
+  <div id="book-quote" class="w-full text-gray-800">
+    লোড হচ্ছে...
+  </div>
+</section>
+
+  <!-- Book quotes Section end here -->
+
+	
+	
+<!-- Card Grid Start here -->
+<div class="relative">
+  <!-- Left scroll button (only visible on desktop) -->
+  <button class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-green-500 hover:bg-green-600 text-white rounded-full w-8 h-8 shadow-lg transform hover:scale-105 transition-all">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  
+  <div id="scrollingContainer-book" class="overflow-x-auto whitespace-nowrap scroll-smooth cursor-grab active:cursor-grabbing my-10 scrollbar-hide">
+    <div id="scrollingCards-book" class="inline-flex gap-6 px-4 py-2"></div>
+  </div>
+  
+  <!-- Right scroll button (only visible on desktop) -->
+  <button class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-green-500 hover:bg-green-600 text-white rounded-full w-8 h-8 shadow-lg transform hover:scale-105 transition-all">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+</div>
+<!-- Card Grid End  here-->
+
+
+<!-- See More option start here -->
+	
+	<div class="mt-8 flex justify-center">
+  <a href="/your-link-here" class="flex items-center gap-2 text-white py-2 px-6 rounded-lg text-lg bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-lg transform hover:scale-105 transition duration-300">
+    আরও দেখুন
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
+</div>
+
+<!-- See More option end here -->
+	
+  </div>
+</section>
+
+  
+  <!-- EbookCard Section end here -->
+  
+
+ <!-- Book Ads Section start here -->
+  
+  <section class="bg-white py-10 px-4 sm:px-6 md:px-10">
+  <div id="book-ad" class="bg-[#f3fefb] rounded-xl shadow-md px-6 py-6 max-w-2xl mx-auto text-green-800 text-center">
+    <!-- ad content -->
+  </div>
+</section>
+
+  <!-- Book Ads Section end here -->
+  
+
+
+   <!-- Article Section Start -->
+
+  <section class="bg-gradient-to-br from-green-100 to-green-50 py-10 px-4 md:px-10 rounded-b-xl shadow-sm text-center">
+
+  <div class="max-w-7xl mx-auto text-center">
+    
+     <!-- Section Heading -->
+<div class="text-center mb-10">
+  <h2 class="inline-block text-3xl sm:text-4xl font-bold px-8 py-4 rounded-xl bg-gradient-to-r from-green-100 via-green-50 to-green-100 shadow-md border-l-4 border-r-4 border-green-500 text-green-700" style="font-family: 'Charu Chandan', sans-serif;">
+   প্রবন্ধ ও নিবন্ধ 
+    <i class="fas fa-book-reader animate-pulse text-green-600 ml-2"></i>
+  </h2>
+</div>
+    
+    
+    
+    <!-- 📌 Article Section - Quote -->
+<section id="quote-slider" class="w-full flex justify-center text-center">
+  <div id="article-quote" class="w-full text-gray-800">
+    লোড হচ্ছে...
+  </div>
+</section>
+
+    
+    <!-- Article categories card container -->
+  
+ <div class="relative">
+  <!-- Left scroll button (only visible on desktop) -->
+  <button class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-green-500 hover:bg-green-600 text-white rounded-full w-8 h-8 shadow-lg transform hover:scale-105 transition-all">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  
+  <div id="scrollingContainer-article" class="overflow-x-auto whitespace-nowrap scroll-smooth cursor-grab active:cursor-grabbing my-10 scrollbar-hide">
+    <div id="scrollingCards-article" class="inline-flex gap-6 px-4 py-2"></div>
+  </div>
+  
+  <!-- Right scroll button (only visible on desktop) -->
+  <button class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-green-500 hover:bg-green-600 text-white rounded-full w-8 h-8 shadow-lg transform hover:scale-105 transition-all">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+</div>
+  
+  
+  <!-- Card Grid End -->  
+ 
+
+ <!--See more button -->
+  
+  <div class="mt-8 flex justify-center">
+  <button class="flex items-center gap-2 text-white py-2 px-6 rounded-lg text-lg bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-lg transform hover:scale-105 transition duration-300">
+    আরও দেখুন
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+</div>
+  
+ 
+<!-- Articles Grid End -->
+
+
+
+</div>
+</section>
+ 
+<!-- Article Section End here -->
+
+
+
+
+<!-- footer Section start here -->
+
+<footer class="bg-gradient-to-b from-white to-green-50 border-t border-green-200 text-green-900 pt-14 ">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+    <!-- About -->
+    <div>
+      <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-3">আমাদের সম্পর্কে</h3>
+      <p class="text-[15px] text-green-800 leading-relaxed">
+        আমরা কুরআন, হাদিস, সীরাত, বই, অডিও ও প্রবন্ধের মাধ্যমে ইসলামী জ্ঞান ছড়িয়ে দিতে কাজ করছি। 
+        আপনার সাথে আছি সত্যের আলো পৌঁছে দিতে।
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-3">দ্রুত লিংক</h3>
+      <ul class="space-y-2 text-[15px]">
+        <li><a href="#" class="flex items-center gap-2 hover:text-green-700 transition"><i class="fa-solid fa-book-open-reader"></i> কুরআন ও তাফসীর</a></li>
+        <li><a href="#" class="flex items-center gap-2 hover:text-green-700 transition"><i class="fa-solid fa-book"></i> ইসলামী বই</a></li>
+        <li><a href="#" class="flex items-center gap-2 hover:text-green-700 transition"><i class="fa-solid fa-mosque"></i> সীরাত ও সুন্নাহ</a></li>
+        <li><a href="#" class="flex items-center gap-2 hover:text-green-700 transition"><i class="fa-solid fa-pen-nib"></i> প্রবন্ধ</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-3">যোগাযোগ</h3>
+      <p class="text-[15px]"><i class="fa-solid fa-envelope text-green-600 mr-2"></i> <a href="mailto:info@example.com" class="hover:underline">info@example.com</a></p>
+      <p class="text-[15px] mt-2"><i class="fa-brands fa-facebook text-green-600 mr-2"></i> <a href="#" class="hover:underline">fb.com/yourpage</a></p>
+    </div>
+
+    <!-- Subscribe -->
+    <div>
+      <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-3">নতুন আপডেট পেতে</h3>
+      <form class="flex flex-col sm:flex-row gap-3">
+        <input type="email" placeholder="আপনার ইমেইল" class="w-full px-4 py-2 rounded-md border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 bg-white text-green-800" />
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition font-medium">সাবস্ক্রাইব</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Divider Ornament -->
+  <div class="mt-10 flex justify-center">
+    <svg class="w-40 h-6 text-green-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 172 28">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M1 14h20M30 14h20M59 14h20M88 14h20M117 14h20M146 14h25" />
+    </svg>
+  </div>
+
+  <!-- Bottom Copyright -->
+  <div class="text-center text-sm text-green-600 py-6 mt-4 border-t border-green-100">
+    &copy; ২০২৫ <span class="font-semibold">আপনার ওয়েবসাইট নাম</span> | সর্বস্বত্ব সংরক্ষিত।
+  </div>
+</footer>
+
+<!-- footer Section end here -->
+
+
+
+
+<!-- JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS -->
+
+
+<!-- Menu Js Section start here -->
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+<!-- Menu Js Section end here -->
+
+
+<!-- Intro Audio Js Section start here -->
+
+<script>
+  const audio = document.getElementById("introAudio");
+  const toggleBtn = document.getElementById("toggleIntro");
+  const icon = document.getElementById("introIcon");
+  
+  // Unmute and auto play after load
+  window.addEventListener("DOMContentLoaded", () => {
+    audio.muted = false;
+    const playPromise = audio.play();
+    
+    // Handle browser autoplay policy
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        icon.classList.replace("fa-pause", "fa-play");
+        toggleBtn.innerHTML = `<i id="introIcon" class="fa-solid fa-play"></i> অডিও চালু করুন`;
+      });
+    }
+  });
+  
+  // Toggle play/pause button
+  toggleBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      icon.classList.replace("fa-play", "fa-pause");
+      toggleBtn.innerHTML = `<i id="introIcon" class="fa-solid fa-pause"></i> অডিও বন্ধ করুন`;
+    } else {
+      audio.pause();
+      icon.classList.replace("fa-pause", "fa-play");
+      toggleBtn.innerHTML = `<i id="introIcon" class="fa-solid fa-play"></i> অডিও চালু করুন`;
+    }
+  });
+</script>
+
+<!-- Intro Audio Js Section end here -->
+
+
+ <!-- Date and Time Js Section start here -->
+ 
+   <script>
+// ইংরেজি সংখ্যা → বাংলা
+const engToBnNumber = str => str.toString().replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]);
+
+// সময় → বাংলা ফর্ম্যাট (e.g. 4:30 PM → ৪:৩০ PM)
+function formatTimeToBangla(time24) {
+  const [hour, minute] = time24.split(':').map(Number);
+  const date = new Date();
+  date.setHours(hour);
+  date.setMinutes(minute);
+
+  const options = { hour: 'numeric', minute: '2-digit', hour12: true };
+  const time12 = date.toLocaleTimeString('en-US', options);
+  const [hourMin, period] = time12.split(" ");
+  const [h, m] = hourMin.split(":");
+
+  return `${engToBnNumber(h)}:${engToBnNumber(m)} ${period}`;
+}
+
+// বাংলা হিজরি মাস
+const hijriMonthsBn = [
+  "মুহাররম", "সফর", "রবিউল আউয়াল", "রবিউস সানি",
+  "জমাদিউল আউয়াল", "জমাদিউস সানি", "রজব", "শাবান",
+  "রমজান", "শাওয়াল", "জিলকদ", "জিলহজ্জ"
+];
+
+
+
+// বাংলা তারিখ গণনার ফাংশন
+
+
+function getBanglaDate() {
+  const date = new Date();
+  const banglaMonths = [
+    "বৈশাখ", "জ্যৈষ্ঠ", "আষাঢ়", "শ্রাবণ", "ভাদ্র", "আশ্বিন",
+    "কার্তিক", "অগ্রহায়ণ", "পৌষ", "মাঘ", "ফাল্গুন", "চৈত্র"
+  ];
+  
+  const baseDate = new Date(date.getFullYear(), 3, 14); // ১৪ এপ্রিল
+  let diff = date - baseDate;
+  
+  if (diff < 0) {
+    baseDate.setFullYear(baseDate.getFullYear() - 1);
+    diff = date - baseDate;
+  }
+  
+  const oneDay = 24 * 60 * 60 * 1000;
+  const passedDays = Math.floor(diff / oneDay);
+  
+  let monthIndex = Math.floor(passedDays / 30) % 12;
+  let day = (passedDays % 30);
+  if (day === 0) day = 1; // যেন ০ না হয়
+  let year = date.getFullYear() - 593;
+  
+  return {
+    bnDay: day,
+    bnMonth: banglaMonths[monthIndex],
+    bnYear: year
+  };
+}
+
+
+// নামাজ ও তারিখ লোডার
+async function loadPrayerTimes() {
+  const res = await fetch(`https://api.aladhan.com/v1/timingsByCity?city=Dhaka&country=Bangladesh&method=1&school=1`);
+  const data = await res.json();
+  const timings = data.data.timings;
+  const hijri = data.data.date.hijri;
+  const gregorian = data.data.date.gregorian;
+
+  // 📅 আজকের নাম
+  const weekdays = {
+    "Friday": "শুক্রবার", "Saturday": "শনিবার", "Sunday": "রবিবার",
+    "Monday": "সোমবার", "Tuesday": "মঙ্গলবার",
+    "Wednesday": "বুধবার", "Thursday": "বৃহস্পতিবার"
+  };
+
+  const months = [
+    "জানুয়ারি", "ফেব্রুয়ারি", "মার্চ", "এপ্রিল", "মে", "জুন",
+    "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"
+  ];
+
+  const bnMonth = months[Number(gregorian.month.number) - 1];
+  const hijriMonthBn = hijriMonthsBn[Number(hijri.month.number) - 1];
+  const { bnDay, bnMonth: banglaMonth, bnYear } = getBanglaDate();
+ 
+
+// হিজরি দিন -১ বাংলাদেশ অনুযায়ী
+let hijriDateObj = new Date(`${hijri.year}-${hijri.month.number}-${hijri.day}`);
+hijriDateObj.setDate(hijriDateObj.getDate() - 1);
+
+let adjustedHijriDay = hijriDateObj.getDate();
+let adjustedHijriMonth = hijriDateObj.getMonth() + 1;
+let adjustedHijriYear = hijriDateObj.getFullYear();
+let adjustedHijriMonthBn = hijriMonthsBn[adjustedHijriMonth - 1];
+
+
+  // 📅 তারিখ দেখাও
+  document.getElementById("date-section").innerHTML = `
+    <p><i class="fa-solid fa-calendar-day text-green-600 mr-2"></i>আজ: <strong>${weekdays[gregorian.weekday.en]}</strong></p>
+<p><i class="fa-solid fa-moon text-green-600 mr-2"></i>হিজরি: ${engToBnNumber(adjustedHijriDay)} ${adjustedHijriMonthBn}, ${engToBnNumber(adjustedHijriYear)}</p>
+    <p><i class="fa-solid fa-calendar-days text-green-600 mr-2"></i>বাংলা: ${engToBnNumber(bnDay)} ${banglaMonth}, ${engToBnNumber(bnYear)}</p>
+    <p><i class="fa-regular fa-calendar text-green-600 mr-2"></i>ইংরেজি: ${engToBnNumber(gregorian.day)} ${bnMonth}, ${engToBnNumber(gregorian.year)}</p>
+
+  `;
+
+  // 🕋 নামাজ সময়
+  const prayerList = [
+    { name: 'ফজর', key: 'Fajr' },
+    { name: 'যুহর', key: 'Dhuhr' },
+    { name: 'আসর', key: 'Asr' },
+    { name: 'মাগরিব', key: 'Maghrib' },
+    { name: 'ইশা', key: 'Isha' }
+  ];
+
+  const now = new Date();
+  const currentTime = now.getHours() + ":" + now.getMinutes().toString().padStart(2, '0');
+
+  const getMinutes = t => {
+    const [h, m] = t.split(":").map(Number);
+    return h * 60 + m;
+  };
+
+  const currentMinutes = getMinutes(currentTime);
+  let currentPrayerKey = '';
+
+  for (let i = 0; i < prayerList.length; i++) {
+    const start = getMinutes(timings[prayerList[i].key]);
+    let end;
+
+    if (prayerList[i].key === 'Fajr') {
+      end = getMinutes(timings.Sunrise);
+    } else if (i < prayerList.length - 1) {
+      end = getMinutes(timings[prayerList[i + 1].key]);
+    } else {
+      end = getMinutes(timings.Fajr) + 24 * 60;
+    }
+
+    if (currentMinutes >= start && currentMinutes < end) {
+      currentPrayerKey = prayerList[i].key;
+      break;
+    }
+  }
+
+  const prayerHTML = prayerList.map((p, index) => {
+    const isCurrent = p.key === currentPrayerKey;
+    const bg = isCurrent ? 'bg-yellow-100 shadow-md animate-pulse border-yellow-500' : 'hover:bg-green-50 border-green-200';
+    const currentTag = isCurrent ? ' (চলমান)' : '';
+    const startTime = formatTimeToBangla(timings[p.key]);
+    const endTime = formatTimeToBangla(
+      p.name === 'ফজর' ? timings.Sunrise : timings[prayerList[index + 1]?.key || 'Fajr']
+    );
+    const timeRange = `${startTime} - ${endTime}`;
+    return `
+      <div class="flex justify-between items-center border-l-4 ${bg} pl-3 py-1 rounded">
+        <span class="font-semibold">${isCurrent ? '🕒 ' : ''}${p.name}${currentTag}</span>
+        <span class="text-xs">${timeRange}</span>
+      </div>
+    `;
+  }).join('');
+
+  document.getElementById("prayer-times").innerHTML = prayerHTML;
+}
+
+// লোড করো
+loadPrayerTimes();
+</script>
+  
+  
+<script>
+  // ইংরেজি সংখ্যাকে বাংলায় রূপান্তর করার ফাংশন
+  function toBanglaNumber(str) {
+    const engToBan = { '0': '০', '1': '১', '2': '২', '3': '৩', '4': '৪', '5': '৫', '6': '৬', '7': '৭', '8': '৮', '9': '৯' };
+    return str.replace(/\d/g, d => engToBan[d]);
+  }
+  
+  function convertTo12Hour(timeStr) {
+    const [hour, minute] = timeStr.split(':');
+    let h = parseInt(hour);
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    const time = `${h}:${minute} ${ampm}`;
+    return toBanglaNumber(time);
+  }
+  
+  fetch("https://api.aladhan.com/v1/timingsByCity?city=Dhaka&country=Bangladesh&method=1&school=1")
+    .then(res => res.json())
+    .then(data => {
+      const timings = data.data.timings;
+      
+      const sehri = convertTo12Hour(timings.Imsak);
+      const iftar = convertTo12Hour(timings.Maghrib);
+      
+      const sehriIftarHtml = `
+        <p><i class="fa-solid fa-utensils text-green-600 mr-2"></i>সেহরির শেষ সময়: <strong>${sehri}</strong></p>
+        <p><i class="fa-solid fa-moon text-yellow-600 mr-2"></i>ইফতারের সময়: <strong>${iftar}</strong></p>
+      `;
+      
+      document.getElementById("sehri-iftar-times").innerHTML = sehriIftarHtml;
+    })
+    .catch(error => {
+      console.error("Error loading Sehri & Iftar times:", error);
+      document.getElementById("sehri-iftar-times").innerHTML = "<p>সেহরি ও ইফতারের সময় লোড করা যাচ্ছে না।</p>";
+    });
+</script>  
+  
+<!-- Date and Time Js Section End here -->   
+  
+	
+<!-- Radio Js Section start here --> 	
+	
+<script>
+  const radioAudio = document.getElementById("liveRadioAudio");
+  const toggleRadio = document.getElementById("toggleRadio");
+  const muteRadio = document.getElementById("muteRadio");
+  const radioIcon = document.getElementById("radioIcon");
+  const muteIcon = document.getElementById("muteIcon");
+  
+  let isPlaying = false;
+  let isMuted = false;
+  
+  // ⏯️ Play/Pause Button Logic
+  toggleRadio.addEventListener("click", () => {
+    if (!isPlaying) {
+      // Start playing in muted state
+      radioAudio.muted = true;
+      isMuted = true;
+      radioAudio.play();
+      isPlaying = true;
+      
+      // Show pause icon
+      radioIcon.classList.replace("fa-play", "fa-pause");
+      toggleRadio.innerHTML = `<i id="radioIcon" class="fa-solid fa-pause"></i> রেডিও বন্ধ করুন`;
+      
+      // Set mute icon initially
+      muteIcon.classList.replace("fa-volume-high", "fa-volume-xmark");
+      muteRadio.innerHTML = `<i id="muteIcon" class="fa-solid fa-volume-xmark"></i> সাউন্ড বন্ধ`;
+      
+      // Unmute automatically after 30 seconds
+      setTimeout(() => {
+        if (isPlaying && isMuted) {
+          radioAudio.muted = false;
+          isMuted = false;
+          muteIcon.classList.replace("fa-volume-xmark", "fa-volume-high");
+          muteRadio.innerHTML = `<i id="muteIcon" class="fa-solid fa-volume-high"></i> সাউন্ড বন্ধ`;
+        }
+      }, 30000);
+      
+    } else {
+      radioAudio.pause();
+      isPlaying = false;
+      
+      radioIcon.classList.replace("fa-pause", "fa-play");
+      toggleRadio.innerHTML = `<i id="radioIcon" class="fa-solid fa-play"></i> রেডিও চালু করুন`;
+    }
+  });
+  
+  // 🔇 Mute/Unmute Toggle
+  muteRadio.addEventListener("click", () => {
+    isMuted = !isMuted;
+    radioAudio.muted = isMuted;
+    
+    if (isMuted) {
+      muteIcon.classList.replace("fa-volume-high", "fa-volume-xmark");
+      muteRadio.innerHTML = `<i id="muteIcon" class="fa-solid fa-volume-xmark"></i> সাউন্ড বন্ধ`;
+    } else {
+      muteIcon.classList.replace("fa-volume-xmark", "fa-volume-high");
+      muteRadio.innerHTML = `<i id="muteIcon" class="fa-solid fa-volume-high"></i> সাউন্ড চালু`;
+    }
+  });
+  
+</script>   
+
+
+<script>
+  const eventSource = new EventSource("https://api.zeno.fm/mounts/metadata/subscribe/ghcsb5a7ma0uv/");
+  
+  eventSource.onmessage = function(event) {
+    try {
+      const parsedData = JSON.parse(event.data);
+      const streamTitleRaw = parsedData.streamTitle || "শিরোনাম পাওয়া যায়নি";
+      
+      // Title এবং Artist আলাদা করা
+      const parts = streamTitleRaw.split(" - ");
+      const artist = parts[0] || "";
+      const title = parts[1] || streamTitleRaw; // fallback if no dash
+      
+      // হালনাগাদ DOM
+      document.getElementById("bayan-title").innerHTML = `
+        <span style="font-size: 20px; font-weight: bold;">${title}</span><br>
+        <span style="font-size: 16px; color: #1c463a;">${artist}</span>
+      `;
+      document.getElementById("bayan-status").textContent = "এখন চলছে...";
+    } catch (error) {
+      console.error("ডেটা পার্স করতে সমস্যা:", error);
+    }
+  };
+  
+  eventSource.onerror = function(error) {
+    console.error("স্ট্রিম সংযোগে সমস্যা:", error);
+    document.getElementById("bayan-title").textContent = "স্ট্রিম সংযোগে সমস্যা";
+    document.getElementById("bayan-status").textContent = "";
+  };
+</script>
+  
+
+<!-- Radio Js Section End here --> 
+
+  
+	 <!-- Include Alpine.js -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+	 
+
+<!-- Grid Card Js Section start here -->
+  
+  <script>
+async function loadCategoryCards(section, jsonFile, containerId) {
+  const res = await fetch(jsonFile);
+  const categories = await res.json();
+  const container = document.getElementById(containerId);
+
+  categories.forEach(cat => {
+    const div = document.createElement('div');
+    div.className = "bg-white border border-gray-200 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1";
+    div.style.minWidth = "260px";
+    div.innerHTML = `
+      <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+        <i class="text-green-600 text-2xl fa-solid fa-file-audio"></i>
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-green-700 break-words whitespace-normal" style="font-family: 'Charu Chandan', sans-serif;">${cat.name}</h3>
+      <p class="text-sm text-gray-600 mb-4 break-words whitespace-normal leading-relaxed">${cat.description}</p>
+      <a href="${cat.link}" class="inline-block text-green-600 font-semibold hover:underline">বিস্তারিত →</a>
+    `;
+    container.appendChild(div);
+  });
+}
+
+// Load all 3 sections
+loadCategoryCards('audio', 'audio_categories.json', 'scrollingCards-audio');
+loadCategoryCards('book', 'book_categories.json', 'scrollingCards-book');
+loadCategoryCards('article', 'article_categories.json', 'scrollingCards-article');
+loadCategoryCards('quran', 'quran_categories.json', 'scrollingCards-quran');
+
+
+// Drag scroll support for all 3
+['scrollingContainer-audio', 'scrollingContainer-book', 'scrollingContainer-article'].forEach(id => {
+  const scrollContainer = document.getElementById(id);
+  let isDown = false;
+  let startX, scrollLeft;
+
+  scrollContainer.addEventListener('mousedown', e => {
+    isDown = true;
+    scrollContainer.classList.add('active');
+    startX = e.pageX - scrollContainer.offsetLeft;
+    scrollLeft = scrollContainer.scrollLeft;
+  });
+  scrollContainer.addEventListener('mouseleave', () => isDown = false);
+  scrollContainer.addEventListener('mouseup', () => isDown = false);
+  scrollContainer.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainer.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    scrollContainer.scrollLeft = scrollLeft - walk;
+  });
+});
+
+// Add scroll button functionality
+document.querySelectorAll('[id^="scrollingContainer-"]').forEach(container => {
+  const parent = container.parentElement;
+  const leftBtn = parent.querySelector('button:first-of-type');
+  const rightBtn = parent.querySelector('button:last-of-type');
+  
+  if (leftBtn && rightBtn) {
+    leftBtn.addEventListener('click', () => {
+      container.scrollLeft -= 300;
+    });
+    
+    rightBtn.addEventListener('click', () => {
+      container.scrollLeft += 300;
+    });
+  }
+});
+</script>
+  
+<!-- Grid Card Js Section End here -->
+
+
+<!-- Ads Js Section End here -->
+
+<script>
+  async function loadAds(sectionId, targetElementId) {
+    try {
+      const res = await fetch('ads.json');
+      const allAds = await res.json();
+      const ads = allAds.filter(ad => ad.section === sectionId);
+      
+      if (!ads.length) return;
+      
+      let index = 0;
+      const container = document.getElementById(targetElementId);
+      
+      container.innerHTML = `
+      <div id="${targetElementId}-slide" class="relative h-28 flex items-center justify-center overflow-hidden"></div>
+      <div id="${targetElementId}-dots" class="flex justify-center mt-4 space-x-2"></div>
+    `;
+      
+      const slideWrapper = document.getElementById(`${targetElementId}-slide`);
+      const dotsWrapper = document.getElementById(`${targetElementId}-dots`);
+      
+      ads.forEach((ad, i) => {
+        const slide = document.createElement('div');
+        slide.className = `absolute inset-0 transition-all duration-500 ease-in-out transform flex flex-col sm:flex-row items-center justify-center gap-4 ${i === 0 ? 'opacity-100 translate-x-0 z-10' : 'opacity-0 translate-x-full z-0'}`;
+        slide.innerHTML = `
+        <img src="${ad.logo}" alt="logo" class="h-12 sm:h-14 md:h-16" />
+        <div>
+          <h3 class="text-lg sm:text-xl md:text-2xl font-[BenSenHandwriting]">
+            <a href="${ad.link}" target="_blank" class="hover:underline">${ad.tagline}</a>
+          </h3>
+          <p class="text-sm sm:text-base mt-1 italic">📌 ${ad.name}</p>
+        </div>
+      `;
+        slideWrapper.appendChild(slide);
+        
+        const dot = document.createElement('button');
+        dot.className = `w-3 h-3 rounded-full ${i === 0 ? 'bg-green-600' : 'bg-green-300'}`;
+        dot.addEventListener('click', () => {
+          index = i;
+          renderSlides();
+        });
+        dotsWrapper.appendChild(dot);
+      });
+      
+      function renderSlides() {
+        const slides = slideWrapper.children;
+        const dots = dotsWrapper.children;
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].className = `absolute inset-0 transition-all duration-500 ease-in-out transform flex flex-col sm:flex-row items-center justify-center gap-4 ${
+          i === index ? 'opacity-100 translate-x-0 z-10' : 'opacity-0 translate-x-full z-0'
+        }`;
+          dots[i].className = `w-3 h-3 rounded-full ${i === index ? 'bg-green-600' : 'bg-green-300'}`;
+        }
+      }
+      
+      setInterval(() => {
+        index = (index + 1) % ads.length;
+        renderSlides();
+      }, 6000);
+    } catch (err) {
+      console.error("Ad loading failed:", err);
+    }
+  }
+  
+  // call function for each section where needed
+  loadAds("audio", "audio-ad");
+  loadAds("quran", "quran-ad")
+  loadAds("book", "book-ad")
+  loadAds("article", "article-ad")
+
+  // loadAds("quran", "quran-ad"); ← আরও চাইলে ব্যবহার করুন
+</script>
+
+<!-- Ads Js Section End here -->
+
+
+<!-- quotes Js Section start here -->
+
+<script>
+  async function loadQuotes(section, containerId) {
+    try {
+      const res = await fetch('quotes.json');
+      const allQuotes = await res.json();
+      const quotes = allQuotes.filter(q => q.section === section);
+      if (!quotes.length) return;
+      
+      const container = document.getElementById(containerId);
+      container.innerHTML = `
+      <div id="${containerId}-slide" class="relative min-h-[120px] flex items-center justify-center overflow-hidden"></div>
+      <div id="${containerId}-dots" class="flex justify-center mt-4 space-x-2"></div>
+    `;
+      
+      const slideWrapper = document.getElementById(`${containerId}-slide`);
+      const dotsWrapper = document.getElementById(`${containerId}-dots`);
+      
+      let index = 0;
+      
+      quotes.forEach((quote, i) => {
+        const slide = document.createElement('div');
+        slide.className = `absolute inset-0 transition-all duration-500 ease-in-out transform text-center p-4 rounded-2xl flex flex-col items-center justify-center gap-4 ${
+        i === 0 ? 'opacity-100 translate-x-0 z-10' : 'opacity-0 translate-x-full z-0'
+      } ${quote.bg}`;
+        
+        slide.innerHTML = `
+        <q class="text-lg leading-relaxed font-serif">${quote.text}</q>
+        <div class="text-sm text-gray-600 font-semibold">| ${quote.source} | ${quote.ayah} |</div>
+      `;
+        slideWrapper.appendChild(slide);
+        
+        const dot = document.createElement('button');
+        dot.className = `w-3 h-3 rounded-full ${i === 0 ? 'bg-green-600' : 'bg-green-300'}`;
+        dot.addEventListener('click', () => {
+          index = i;
+          renderSlides();
+        });
+        dotsWrapper.appendChild(dot);
+      });
+      
+      function renderSlides() {
+        const slides = slideWrapper.children;
+        const dots = dotsWrapper.children;
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].className = `absolute inset-0 transition-all duration-500 ease-in-out transform text-center p-4 rounded-2xl flex flex-col items-center justify-center gap-4 ${
+          i === index ? 'opacity-100 translate-x-0 z-10' : 'opacity-0 translate-x-full z-0'
+        } ${quotes[i].bg}`;
+          dots[i].className = `w-3 h-3 rounded-full ${i === index ? 'bg-green-600' : 'bg-green-300'}`;
+        }
+      }
+      
+      setInterval(() => {
+        index = (index + 1) % quotes.length;
+        renderSlides();
+      }, 8000);
+      
+    } catch (err) {
+      console.error("❌ Quote loading failed:", err);
+    }
+  }
+  
+  // উদাহরণ:
+  loadQuotes("quran", "quran-quote");
+  loadQuotes("book", "book-quote");
+  loadQuotes("article", "article-quote");
+  loadQuotes("audio", "audio-quote");
+  
+  
+</script>  
+
+<!-- quotes Js Section end here -->
+
+
+<script>
+
+let sharedAudio = null;
+let currentModalData = null;
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("modals.json")
+    .then(res => res.json())
+    .then(modals => {
+      const now = new Date();
+      const hour = now.getHours();
+      const minute = now.getMinutes();
+      const totalMinutes = hour * 60 + minute;
+      const date = now.getDate();
+      const dayIndex = now.getDay();
+      const banglaDays = ["রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"];
+      const today = banglaDays[dayIndex];
+      
+      const matched = modals.find(modal => {
+        const sch = modal.schedule;
+        const dur = modal.duration || 10;
+        const startMinutes = sch.startHour * 60 + sch.startMinute;
+        const endMinutes = startMinutes + dur;
+        const inTimeWindow = totalMinutes >= startMinutes && totalMinutes < endMinutes;
+        
+        if (!inTimeWindow) return false;
+        
+        if (sch.type === "daily") return true;
+        
+        if (sch.type === "weekly") {
+          return sch.dayOfWeek === today;
+        }
+        
+        if (sch.type === "monthly_specific_day") {
+          const targetDay = banglaDays.indexOf(sch.dayOfWeek);
+          const allDates = [];
+          const d = new Date(now.getFullYear(), now.getMonth(), 1);
+          while (d.getMonth() === now.getMonth()) {
+            if (d.getDay() === targetDay) {
+              allDates.push(d.getDate());
+            }
+            d.setDate(d.getDate() + 1);
+          }
+          const expectedDate = allDates[sch.dayOfMonthOccurrence - 1];
+          return date === expectedDate && sch.dayOfWeek === today;
+        }
+        
+        return false;
+      });
+      
+      if (matched && shouldShowModal(matched)) {
+        currentModalData = matched;
+        showModal(matched);
+        autoCloseAfterDuration(matched.duration || 10);
+      }
+    });
+});
+
+function shouldShowModal(data) {
+  const now = new Date();
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+  const startMinutes = data.schedule.startHour * 60 + data.schedule.startMinute;
+  const endMinutes = startMinutes + (data.duration || 10);
+  return currentMinutes >= startMinutes && currentMinutes < endMinutes;
+}
+
+function showModal(data) {
+  const container = document.getElementById("modal-container");
+  const audio = new Audio(data.audioSrc);
+  sharedAudio = audio;
+  
+  const now = new Date();
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+  const audioStartMinutes = data.schedule.startHour * 60 + data.schedule.startMinute;
+  const offset = Math.max(0, (currentMinutes - audioStartMinutes) * 60); // in seconds
+  
+  audio.preload = "auto";
+  audio.addEventListener("loadedmetadata", () => {
+    if (offset < audio.duration) {
+      audio.currentTime = offset;
+    }
+  }); 
+  
+container.innerHTML = `
+  <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-[9999]">
+    <div id="mainModal" class="bg-white rounded-xl shadow-xl max-w-sm w-[90%] p-5 border border-green-200 text-center relative">
+      <button onclick="closeModal()" class="text-red-500 hover:text-red-700 text-xl font-bold absolute top-2 right-3">&times;</button>
+      <h2 class="text-lg font-semibold text-green-800 mb-2">${data.title}</h2>
+      <p class="text-sm text-gray-700 mb-4">${data.description}</p>
+      <div class="flex justify-center">
+        <button id="audioToggleBtn" onclick="toggleAudio()" class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md">
+          ${playIconSVG()} <span>Play</span>
+        </button>
+      </div>
+    </div>
+  </div>
+`;  
+  
+ }
+
+function autoCloseAfterDuration(duration) {
+  setTimeout(() => {
+    if (sharedAudio) {
+      sharedAudio.pause();
+      sharedAudio.currentTime = 0;
+    }
+    removeAllModals();
+    sharedAudio = null;
+    currentModalData = null;
+  }, duration * 60 * 1000); // মিনিট → মিলিসেকেন্ড
+}
+
+function closeModal() {
+  const modal = document.getElementById("mainModal");
+  if (modal) modal.remove();
+  showMiniPlayer();
+}
+
+function showMiniPlayer() {
+  if (!currentModalData) return;
+  
+  const container = document.getElementById("modal-container");
+  const isPlaying = sharedAudio && !sharedAudio.paused;
+  
+  container.innerHTML = `
+    <div id="miniModal" class="fixed bottom-5 right-5 bg-white rounded-lg shadow-md px-4 py-2 z-[9999] flex items-center gap-3 border border-green-200 text-center">
+      <strong class="text-green-700 text-sm">${currentModalData.title}</strong>
+      <button id="miniAudioBtn" onclick="toggleAudio()" class="bg-green-600 hover:bg-green-700 text-white p-2 rounded-md">
+        ${isPlaying ? pauseIconSVG() : playIconSVG()}
+      </button>
+    </div>
+  `;
+}
+
+function toggleAudio() {
+  if (!sharedAudio) return;
+  
+  const btn1 = document.getElementById("audioToggleBtn");
+  const btn2 = document.getElementById("miniAudioBtn");
+  
+  if (sharedAudio.paused) {
+    sharedAudio.play();
+    if (btn1) btn1.innerHTML = `${pauseIconSVG()} <span>Pause</span>`;
+    if (btn2) btn2.innerHTML = pauseIconSVG();
+  } else {
+    sharedAudio.pause();
+    if (btn1) btn1.innerHTML = `${playIconSVG()} <span>Play</span>`;
+    if (btn2) btn2.innerHTML = playIconSVG();
+  }
+  
+  
+  
+}
+
+function playIconSVG() {
+  return `
+    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 3.9v16.2c0 .75.8 1.2 1.5.8l12.4-8.1c.6-.4.6-1.3 0-1.7L6.5 3c-.7-.4-1.5.1-1.5.9z" />
+    </svg>`;
+}
+
+function pauseIconSVG() {
+  return `
+    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 4.5v15m10.5-15v15" />
+    </svg>`;
+}
+
+function removeAllModals() {
+  const main = document.getElementById('mainModal');
+  const mini = document.getElementById('miniModal');
+  if (main) main.remove();
+  if (mini) mini.remove();
+}
+</script>
+
+<script>
+function toBanglaNumber(num) {
+  return num.toString().replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[d]);
+}
+
+function formatTime(hour, minute) {
+  const h = toBanglaNumber((hour % 12) || 12);
+  const m = toBanglaNumber(minute.toString().padStart(2, '0'));
+  const suffix = hour < 12 ? "সকাল" : (hour < 18 ? "বিকেল" : "রাত");
+  return `${suffix} ${h}.${m}`;
+}
+
+function getNextMonthlyDate(dayOfWeek, occurrence) {
+  const now = new Date();
+  const bnDays = {
+    "রবিবার": 0, "সোমবার": 1, "মঙ্গলবার": 2,
+    "বুধবার": 3, "বৃহস্পতিবার": 4,
+    "শুক্রবার": 5, "শনিবার": 6
+  };
+  const targetDay = bnDays[dayOfWeek];
+
+  function find(monthOffset = 0) {
+    const date = new Date(now.getFullYear(), now.getMonth() + monthOffset, 1);
+    let count = 0;
+    while (date.getMonth() === now.getMonth() + monthOffset) {
+      if (date.getDay() === targetDay) {
+        count++;
+        if (count === occurrence) {
+          return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        }
+      }
+      date.setDate(date.getDate() + 1);
+    }
+    return null;
+  }
+
+  let target = find();
+  if (!target || target <= now) target = find(1);
+  return target;
+}
+
+function formatDateBangla(date) {
+  const formatter = new Intl.DateTimeFormat('bn-BD', {
+    day: 'numeric', month: 'long'
+  });
+  return formatter.format(date);
+}
+
+function loadMarquee() {
+  fetch('modals.json')
+    .then(res => res.json())
+    .then(modals => {
+      let message = '';
+
+      modals.forEach(modal => {
+        const s = modal.schedule;
+        if (s.type === 'daily') {
+          const timeStr = formatTime(s.startHour, s.startMinute);
+          message += `📌 প্রতিদিন ${modal.title} ${timeStr}-এ শুরু হবে। `;
+        }
+
+        else if (s.type === 'weekly') {
+          const timeStr = formatTime(s.startHour, s.startMinute);
+          message += `📌 প্রতি ${s.dayOfWeek} ${timeStr}-এ ${modal.title} অনুষ্ঠিত হয়। `;
+        }
+
+        else if (s.type === 'monthly_specific_day') {
+          const timeStr = formatTime(s.startHour, s.startMinute);
+          const nextDate = getNextMonthlyDate(s.dayOfWeek, s.dayOfMonthOccurrence);
+          const banglaDate = formatDateBangla(nextDate);
+          message += `📌 প্রতি মাসের ${toBanglaNumber(s.dayOfMonthOccurrence)}য় ${s.dayOfWeek} ${timeStr}-এ ${modal.title} অনুষ্ঠিত হয়। পরবর্তী ${modal.title} ${banglaDate} ${timeStr} অনুষ্ঠিত হবে। `;
+        }
+      });
+
+      document.getElementById('ad-marquee-text').textContent = message.trim();
+    });
+}
+
+loadMarquee();
+</script>
+
+</body>
+</html>

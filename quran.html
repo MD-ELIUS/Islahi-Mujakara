@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al-Quran Onubad O Tafsir</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+  @font-face {
+  font-family: 'MyFont';
+  src: url('font/quran.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  
+ .  @font-face {
+    font-family: 'MyFont1';
+    src: url('font/quran1.ttf') ;
+
+}
+
+/* Extend Tailwind to recognize your custom font */
+    .arabic-font {
+      font-family: 'MyFont', sans-serif;
+	  font-size: 1.85rem;
+	  direction: rtl !important;
+	  text-align: right !important;
+	  unicode-bidi: isolate;
+     display: inline;
+     word-spacing: 150px;
+    }
+	
+	.ls-wide {
+	
+	}
+  </style>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-50 ">
+  
+  <div class="sticky top-0 z-50 w-full bg-green-800 text-white text-sm py-2 px-4 shadow-md">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <span><i class="fa-solid fa-feather-pointed text-green-600 mr-2"></i>আসুন অন্তরকে পরিশুদ্ধ করি</span>
+    </div>
+    <div class="flex gap-3">
+      <a href="#" class="hover:text-green-300"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="hover:text-green-300"><i class="fab fa-youtube"></i></a>
+      <a href="#" class="hover:text-green-300"><i class="fab fa-telegram"></i></a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Sticky Top Navbar -->
+  
+  <!-- Sticky Top Navbar -->
+<header class="sticky top-0 z-50 bg-white shadow-md border-b border-green-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      
+      <!-- Logo & Site Title -->
+      <a href="index.html" class="flex items-center gap-2 px-4 py-2 bg-green-100 hover:bg-green-200 text-green-800 font-bold rounded-xl shadow shadow-green-300 transition duration-200">
+        <i class="fa-solid fa-mosque text-green-600 text-lg"></i>
+        <span class="text-lg">ইসলাহী মুজাকারা</span>
+      </a>
+      
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center gap-4 text-green-800 font-semibold text-sm bg-white px-4 py-2 rounded-xl shadow border border-green-100">
+        <a href="index.html" class="px-3 py-1 rounded hover:bg-green-100 transition">হোম</a>
+        <a href="quran.html" class="px-3 py-1 rounded hover:bg-green-100 transition">কুরআন</a>
+        <a href="book.html" class="px-3 py-1 rounded hover:bg-green-100 transition">বই</a>
+        <a href="audio.html" class="px-3 py-1 rounded hover:bg-green-100 transition">অডিও</a>
+        <a href="article.html" class="px-3 py-1 rounded hover:bg-green-100 transition">প্রবন্ধ</a>
+        <a href="contact.html" class="px-3 py-1 rounded hover:bg-green-100 transition">যোগাযোগ</a>
+      </nav>
+      
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="menuToggle" class="text-green-700 text-2xl focus:outline-none">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-green-50 px-4 pb-4 rounded-b-xl shadow border-t border-green-100">
+    <a href="index.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">হোম</a>
+    <a href="quran.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">কুরআন</a>
+    <a href="book.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">বই</a>
+    <a href="audio.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">অডিও</a>
+    <a href="article.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">প্রবন্ধ</a>
+    <a href="contact.html" class="block py-2 px-2 rounded hover:bg-green-100 text-green-800 font-semibold">যোগাযোগ</a>
+  </div>
+</header>
+
+  
+  
+  <div class="bg-gradient-to-br from-green-100 to-green-50 max-w-6xl mx-auto px-4 sm:px-4 py-10 ">
+    <h1 class="text-3xl font-bold mb-3 text-center text-green-700">অনুবাদ | তাফসির | অডিও </h1>
+    <p class="text-sm font-thin mb-10 text-center bg-gradient-to-r from-green-400 via-green-600 to-green-800 bg-clip-text text-transparent">
+  প্রতিটি আয়াতের জন্য ভিন্ন ভিন্ন অনুবাদ,তাফসির ও অডিও
+</p>
+    <!-- Surah & Ayah Filter -->
+   <div class="bg-white rounded-xl shadow-lg px-4 sm:px-6 md:px-8 lg:px-8 py-8 border border-green-200 mt-10">
+
+      <div class="text-center mb-10">
+        <h2 class="inline-block text-3xl sm:text-4xl font-bold px-8 py-4 rounded-xl bg-gradient-to-r from-green-100 via-green-50 to-green-100 shadow-md border-l-4 border-r-4 border-green-500 text-green-700" style="font-family: 'Charu Chandan', sans-serif;">
+          কুরআন
+          <i class=" fas fa-quran animate-pulse text-green-600 ml-2"></i>
+        </h2>
+      </div>
+
+      <h2 class="text-xl font-semibold mb-4 text-green-600 text-center">  সূরা ও আয়াত সংখ্যা নির্বাচন করুন <i class="fa-solid fa-square-check"></i></h2>
+      
+      
+      <div class="grid md:grid-cols-5 sm:grid-cols-2 gap-4 items-end">
+        
+      
+      
+     <!-- Surah Dropdown -->
+<div class="flex flex-col">
+  <select id="surahSelect"
+    class="border border-green-400 bg-green-50 text-green-900 font-semibold rounded-xl px-4 py-2 w-full shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+    <option value="">সূরার নাম</option>
+  </select>
+</div>
+
+<!-- Ayah Dropdown -->
+<div class="flex flex-col">
+  <select id="ayahSelect"
+    class="border border-green-400 bg-green-50 text-green-900 font-semibold rounded-xl px-4 py-2 w-full shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+    <option value="">সকল আয়াত</option>
+  </select>
+</div>
+
+<!-- Ayah Range Input -->
+<div class="flex flex-col">
+  <input type="text" id="ayahRangeInput"
+    class="border border-green-400 bg-green-50 text-green-900 font-semibold rounded-xl px-4 py-2 w-full shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition"
+    placeholder="Start-End (e.g. 5-12)" disabled />
+  <p id="ayahRangeBox" class="text-xs text-gray-500 mt-1"></p>
+</div> 
+      
+      
+      
+      
+        
+<div class="flex flex-col">
+  <select id="qariSelect"
+    class="border border-green-500 bg-green-50 text-green-900 font-semibold rounded-xl px-4 py-2 w-full shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition appearance-none">
+  </select>
+</div>		
+        <div class="flex flex-col">
+          <label class="invisible mb-1">Load</label>
+          <button id="loadSurahButton" class="bg-green-600 text-white px-4 py-2 rounded w-full">Load Surah</button>
+        </div>
+        
+      </div>
+    </div>
+
+
+<!-- ✅ Slider Section -->
+<section class="w-full py-8">
+  <div id="sliderContainer"
+       class="max-w-xl mx-auto rounded-xl shadow-md p-6 transition-all duration-700 ease-in-out bg-green-100">
+
+    <div id="slider" class="relative overflow-hidden cursor-pointer">
+      <div id="slides" class="flex transition-transform duration-700 ease-in-out">
+        <!-- Slides will be injected here -->
+      </div>
+    </div>
+
+    <!-- ✅ Dot Navigation -->
+    <div id="dots" class="flex justify-center mt-4 space-x-2"></div>
+  </div>
+</section>
+
+
+
+<!-- ✅ Surah Header Section (Above ayah cards) -->
+<div id="surah-header" class="max-w-4xl mx-auto mb-6"></div>
+
+
+    <div id="content" class="space-y-5 "></div>
+    <div id="pagination" class="flex justify-center flex-wrap gap-2 mt-6"></div>
+    
+   <div id="direction-section" class="mt-4 p-4  rounded text-center text-red-600">
+  <i class="fa-solid fa-check pr-4"></i>অনুগ্রহ করে একটি সূরা নির্বাচন করুন এবং লোড বাটনে ক্লিক করুন।
+</div> 
+    
+    
+  </div>
+  
+  
+  <footer class="bg-gradient-to-b from-white to-green-50 border-t border-green-200 text-green-900 pt-14 ">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    
+    <!-- About -->
+    <div>
+      <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-3">আমাদের সম্পর্কে</h3>
+      <p class="text-[15px] text-green-800 leading-relaxed">
+        আমরা কুরআন, হাদিস, সীরাত, বই, অডিও ও প্রবন্ধের মাধ্যমে ইসলামী জ্ঞান ছড়িয়ে দিতে কাজ করছি।
+        আপনার সাথে আছি সত্যের আলো পৌঁছে দিতে।
+      </p>
+    </div>
+    
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-3">দ্রুত লিংক</h3>
+      <ul class="space-y-2 text-[15px]">
+        <li><a href="#" class="flex items-center gap-2 hover:text-green-700 transition"><i class="fa-solid fa-book-open-reader"></i> কুরআন ও তাফসীর</a></li>
+        <li><a href="#" class="flex items-center gap-2 hover:text-green-700 transition"><i class="fa-solid fa-book"></i> ইসলামী বই</a></li>
+        <li><a href="#" class="flex items-center gap-2 hover:text-green-700 transition"><i class="fa-solid fa-mosque"></i> সীরাত ও সুন্নাহ</a></li>
+        <li><a href="#" class="flex items-center gap-2 hover:text-green-700 transition"><i class="fa-solid fa-pen-nib"></i> প্রবন্ধ</a></li>
+      </ul>
+    </div>
+    
+    <!-- Contact -->
+    <div>
+      <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-3">যোগাযোগ</h3>
+      <p class="text-[15px]"><i class="fa-solid fa-envelope text-green-600 mr-2"></i> <a href="mailto:info@example.com" class="hover:underline">info@example.com</a></p>
+      <p class="text-[15px] mt-2"><i class="fa-brands fa-facebook text-green-600 mr-2"></i> <a href="#" class="hover:underline">fb.com/yourpage</a></p>
+    </div>
+    
+    <!-- Subscribe -->
+    <div>
+      <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-3">নতুন আপডেট পেতে</h3>
+      <form class="flex flex-col sm:flex-row gap-3">
+        <input type="email" placeholder="আপনার ইমেইল" class="w-full px-4 py-2 rounded-md border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 bg-white text-green-800" />
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition font-medium">সাবস্ক্রাইব</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Divider Ornament -->
+  <div class="mt-10 flex justify-center">
+    <svg class="w-40 h-6 text-green-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 172 28">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M1 14h20M30 14h20M59 14h20M88 14h20M117 14h20M146 14h25" />
+    </svg>
+  </div>
+  
+  <!-- Bottom Copyright -->
+  <div class="text-center text-sm text-green-600 py-6 mt-4 border-t border-green-100">
+    &copy; ২০২৫ <span class="font-semibold">আপনার ওয়েবসাইট নাম</span> | সর্বস্বত্ব সংরক্ষিত।
+  </div>
+</footer>  
+  
+
+  
+
+
+<script>
+document.getElementById('loadSurahButton').addEventListener('click', () => {
+// সূরা লোডের লজিক এখানে থাকলে ভালো
+document.getElementById('direction-section').classList.add('hidden');
+});
+</script>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+
+
+
+  <script>
+  
+  const showAllSurahsButton = document.getElementById('showAllSurahsButton');
+    const surahSelect = document.getElementById('surahSelect');
+    const ayahSelect = document.getElementById('ayahSelect');
+    const ayahRangeInput = document.getElementById('ayahRangeInput');
+    const ayahRangeBox = document.getElementById('ayahRangeBox');
+    const loadSurahButton = document.getElementById('loadSurahButton');
+    const paraSelect = document.getElementById('paraSelect');
+    const pageSelect = document.getElementById('pageSelect');
+    const loadParaButton = document.getElementById('loadParaButton');
+    const content = document.getElementById('content');
+    const pagination = document.getElementById('pagination');
+	const qariSelect = document.getElementById('qariSelect');
+	
+    let currentQari = qariSelect.value;
+
+qariSelect.addEventListener('change', () => {
+  currentQari = qariSelect.value;
+});
+
+
+    let currentSurahAyahCount = 0;
+    let currentSurahNumber = 0;
+    let currentPage = 1;
+    const pageSize = 10;
+
+function loadSurahList() {
+  const surahNamesBn = [
+    'আল-ফাতিহা', 'আল-বাকারাহ', 'আলে-ইমরান', 'আন-নিসা', 'আল-মায়িদা',
+    'আল-আন\'আম', 'আল-আ\'রাফ', 'আল-আনফাল', 'আত-তাওবাহ', 'ইউনুস',
+    'হুদ', 'ইউসুফ', 'আর-রাআদ', 'ইব্রাহিম', 'আল-হিজর',
+    'আন-নাহল', 'বনী ইসরাঈল', 'আল-কাহফ', 'মারইয়াম', 'ত্বা-হা',
+    'আল-আম্বিয়া', 'হাজ্জ', 'আল-মু’মিনুন', 'আন-নূর', 'আল-ফুরকান',
+    'আশ-শু’আরা', 'আন-নামল', 'আল-কাসাস', 'আল-আনকাবুত', 'আর-রূম',
+    'লুকমান', 'আস-সাজদা', 'আল-আহযাব', 'সাবা', 'ফাতির',
+    'ইয়া-সিন', 'আস-সাফফাত', 'সাদ', 'আয-যুমার', 'গাফির',
+    'ফুসসিলাত', 'আশ-শূরা', 'আয-যুখরুফ', 'আদ-দুখান', 'আল-জাসিয়া',
+    'আল-আহক্বাফ', 'মুহাম্মাদ', 'আল-ফাতহ', 'আল-হুজুরাত', 'ক্বাফ',
+    'আয-যারিয়াত', 'আত-তূর', 'আন-নাজম', 'আল-কামার', 'আর-রাহমান',
+    'আল-ওয়াকিয়া', 'আল-হাদীদ', 'আল-মুজাদালাহ', 'আল-হাশর', 'আল-মুমতাহিনা',
+    'আস-সাফ', 'আল-জুমুআ', 'আল-মুনাফিকুন', 'আত-তাগাবুন', 'আত-তালাক',
+    'আত-তাহরিম', 'আল-মুলক', 'আল-কলম', 'আল-হাক্কাহ', 'আল-মাআরিজ',
+    'নুহ', 'আল-জিন', 'আল-মুজাম্মিল', 'আল-মুদ্দাসসির', 'আল-কিয়ামাহ',
+    'আল-ইনসান', 'আল-মুরসালাত', 'আন-নাবা', 'আন-নাজিয়াত', 'আবাসা',
+    'আত-তাকভীর', 'আল-ইনফিতার', 'আত-তাতফিফ', 'আল-ইনশিকাক', 'আল-বুরুজ',
+    'আত-তারিক', 'আল-আলা', 'আল-গাশিয়াহ', 'আল-ফজর', 'আল-বালাদ',
+    'আশ-শামস', 'আল-লায়ল', 'আদ-দুহা', 'আশ-শারহ', 'আত-তিন',
+    'আল-আলাক', 'আল-কদর', 'আল-বাইয়্যিনাহ', 'আয-যালযালাহ', 'আল-আদিয়াত',
+    'আল-কারি\'আহ', 'আত-তাকাসুর', 'আল-আসর', 'আল-হুমাযাহ', 'আল-ফীল',
+    'কুরাইশ', 'আল-মাউন', 'আল-কাওসার', 'আল-কাফিরুন', 'আন-নাসর',
+    'আল-মাসাদ(লাহাব)', 'আল-ইখলাস', 'আল-ফালাক', 'আন-নাস'
+  ];
+
+  for (let i = 0; i < surahNamesBn.length; i++) {
+    const option = document.createElement('option');
+    option.value = i + 1;
+    option.textContent = `${i + 1}. ${surahNamesBn[i]}`;
+    surahSelect.appendChild(option);
+  }
+}
+
+
+    surahSelect.addEventListener('change', async () => {
+      const surahNumber = surahSelect.value;
+      ayahSelect.innerHTML = '<option value="">সকল আয়াত</option>';
+      ayahRangeInput.value = '';
+      ayahRangeInput.classList.remove('border-red-500');
+      currentPage = 1;
+      if (surahNumber) {
+        ayahRangeInput.disabled = false;
+        const res = await axios.get(`https://api.alquran.cloud/v1/surah/${surahNumber}`);
+        currentSurahAyahCount = res.data.data.numberOfAyahs;
+        currentSurahNumber = parseInt(surahNumber);
+       for (let i = 1; i <= currentSurahAyahCount; i++) {
+  const option = document.createElement('option');
+  option.value = i;
+  option.textContent = `আয়াত ${convertEnglishToBengaliNumbers(i)}`;
+  ayahSelect.appendChild(option);
+}
+
+function convertEnglishToBengaliNumbers(enStr) {
+  const map = {
+    '0': '০', '1': '১', '2': '২', '3': '৩', '4': '৪',
+    '5': '৫', '6': '৬', '7': '৭', '8': '৮', '9': '৯'
+  };
+  return String(enStr).replace(/[0-9]/g, d => map[d]);
+}
+        ayahRangeBox.textContent = `এই সূরাতে ${currentSurahAyahCount} টি আয়াত রয়েছে।`;
+      } else {
+        ayahRangeInput.disabled = true;
+        ayahRangeBox.textContent = '';
+      }
+    });
+
+    loadSurahButton.addEventListener('click', async () => {
+      const surah = surahSelect.value;
+      const ayah = ayahSelect.value;
+      const range = ayahRangeInput.value.trim();
+      content.innerHTML = '';
+      pagination.innerHTML = '';
+      const surahHeader = document.getElementById('surah-header');
+surahHeader.innerHTML = ''; // আগের হেডার মুছে ফেলি
+
+try {
+  const res = await axios.get(`https://api.alquran.cloud/v1/surah/${surah}`);
+  const surahData = res.data.data;
+  
+  const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+  const convertToBangla = num => num.toString().split('').map(d => banglaDigits[d] || d).join('');
+  
+  const surahNameBn = surahNamesBnFull[surahData.number - 1] || 'নাম নেই';
+  const surahNameAr = surahData.name;
+  const revelationPlace = surahData.revelationType === 'Meccan' ? 'মক্কায়' : 'মাদিনায়';
+  const ayahCount = convertToBangla(surahData.numberOfAyahs);
+  
+  surahHeader.innerHTML = `
+    <div class="bg-white border-l-4 border-green-600 shadow rounded-xl p-6">
+      <h2 class="text-2xl text-center text-green-700 font-bold mb-1">
+        ${surahNameBn} <span class="text-xl text-gray-700">(${surahNameAr})</span>
+      </h2>
+      <p class="text-center text-sm text-gray-600 mb-2">
+        ☀️ অবতীর্ণ হয়েছে: ${revelationPlace} | আয়াত সংখ্যা: ${ayahCount} টি
+      </p>
+      <p class="text-center text-2xl  text-gray-700 mb-2 font-semibold" style="font-family:'MyFont1','sans-serif';">
+        أَعُوذُ بِاللّٰهِ مِنَ الشَّيْطَانِ الرَّجِيمِ
+      </p>
+      <p class="text-center text-3xl  text-black" style="font-family:'MyFont1', sans-serif; ">
+بِسْمِ ٱللَّهِ ٱلرَّحْمٰنِ ٱلرَّحِيْمِ
+      </p>
+    </div>
+  `;
+} catch (err) {
+  console.error("Surah header info load failed:", err);
+}
+      if (!surah) return;
+
+      ayahRangeInput.classList.remove('border-red-500');
+      try {
+        if (ayah) {
+          const res = await axios.get(`https://api.alquran.cloud/v1/ayah/${surah}:${ayah}`);
+          renderAyah(res.data.data);
+        } else if (range) {
+          const [startBn, endBn] = range.split('-');
+const start = parseInt(convertBengaliToEnglishNumbers(startBn));
+const end = parseInt(convertBengaliToEnglishNumbers(endBn));
+
+          if (!start || !end || start < 1 || end > currentSurahAyahCount || start > end) {
+            ayahRangeInput.classList.add('border-red-500');
+            return;
+          }
+          const promises = [];
+          for (let i = start; i <= end; i++) {
+            promises.push(axios.get(`https://api.alquran.cloud/v1/ayah/${surah}:${i}`));
+          }
+          const responses = await Promise.all(promises);
+          responses.forEach(res => renderAyah(res.data.data));
+        } else {
+          if (currentSurahAyahCount <= 20) {
+            const promises = [];
+            for (let i = 1; i <= currentSurahAyahCount; i++) {
+              promises.push(axios.get(`https://api.alquran.cloud/v1/ayah/${surah}:${i}`));
+            }
+            const responses = await Promise.all(promises);
+            responses.forEach(res => renderAyah(res.data.data));
+          } else {
+            loadPaginatedAyahs(currentPage);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load ayahs:", err);
+        content.innerHTML = `<div class="text-red-600">Error loading Ayahs. Please try again.</div>`;
+      }
+      
+      
+      showAllSurahsButton.addEventListener('click', async () => {
+  content.innerHTML = '';
+  pagination.innerHTML = '';
+  surahHeader.innerHTML = '';
+  directionSection.classList.add('hidden');
+  
+  for (let surah = 1; surah <= 114; surah++) {
+    try {
+      // সূরা API থেকে লোড
+      const res = await axios.get(`https://api.alquran.cloud/v1/surah/${surah}`);
+      const surahData = res.data.data;
+      
+      // প্রয়োজনীয় ভেরিয়েবল আপডেট
+      currentSurahNumber = surah;
+      currentSurahAyahCount = surahData.numberOfAyahs;
+      currentPage = 1;
+      
+      // আগের মতো হেডার ও আয়াত লোড করাতে সূরা change ইভেন্ট ট্রিগার
+      surahSelect.value = surah;
+      surahSelect.dispatchEvent(new Event('change'));
+      
+      // আয়াত দেখাতে call করুন
+      await loadPaginatedAyahs(currentPage);
+    } catch (err) {
+      console.error(`সূরা ${surah} লোডে সমস্যা হয়েছে`, err);
+    }
+  }
+});
+      
+      
+      
+    });
+
+
+const surahNamesBnFull = [
+    'আল-ফাতিহা', 'আল-বাকারাহ', 'আলে-ইমরান', 'আন-নিসা', 'আল-মায়িদা',
+    'আল-আন\'আম', 'আল-আ\'রাফ', 'আল-আনফাল', 'আত-তাওবাহ', 'ইউনুস',
+    'হুদ', 'ইউসুফ', 'আর-রাআদ', 'ইব্রাহিম', 'আল-হিজর',
+    'আন-নাহল', 'বনী ইসরাঈল', 'আল-কাহফ', 'মারইয়াম', 'ত্বা-হা',
+    'আল-আম্বিয়া', 'হাজ্জ', 'আল-মু’মিনুন', 'আন-নূর', 'আল-ফুরকান',
+    'আশ-শু’আরা', 'আন-নামল', 'আল-কাসাস', 'আল-আনকাবুত', 'আর-রূম',
+    'লুকমান', 'আস-সাজদা', 'আল-আহযাব', 'সাবা', 'ফাতির',
+    'ইয়া-সিন', 'আস-সাফফাত', 'সাদ', 'আয-যুমার', 'গাফির',
+    'ফুসসিলাত', 'আশ-শূরা', 'আয-যুখরুফ', 'আদ-দুখান', 'আল-জাসিয়া',
+    'আল-আহক্বাফ', 'মুহাম্মাদ', 'আল-ফাতহ', 'আল-হুজুরাত', 'ক্বাফ',
+    'আয-যারিয়াত', 'আত-তূর', 'আন-নাজম', 'আল-কামার', 'আর-রাহমান',
+    'আল-ওয়াকিয়া', 'আল-হাদীদ', 'আল-মুজাদালাহ', 'আল-হাশর', 'আল-মুমতাহিনা',
+    'আস-সাফ', 'আল-জুমুআ', 'আল-মুনাফিকুন', 'আত-তাগাবুন', 'আত-তালাক',
+    'আত-তাহরিম', 'আল-মুলক', 'আল-কলম', 'আল-হাক্কাহ', 'আল-মাআরিজ',
+    'নুহ', 'আল-জিন', 'আল-মুজাম্মিল', 'আল-মুদ্দাসসির', 'আল-কিয়ামাহ',
+    'আল-ইনসান', 'আল-মুরসালাত', 'আন-নাবা', 'আন-নাজিয়াত', 'আবাসা',
+    'আত-তাকভীর', 'আল-ইনফিতার', 'আত-তাতফিফ', 'আল-ইনশিকাক', 'আল-বুরুজ',
+    'আত-তারিক', 'আল-আলা', 'আল-গাশিয়াহ', 'আল-ফজর', 'আল-বালাদ',
+    'আশ-শামস', 'আল-লায়ল', 'আদ-দুহা', 'আশ-শারহ', 'আত-তিন',
+    'আল-আলাক', 'আল-কদর', 'আল-বাইয়্যিনাহ', 'আয-যালযালাহ', 'আল-আদিয়াত',
+    'আল-কারি\'আহ', 'আত-তাকাসুর', 'আল-আসর', 'আল-হুমাযাহ', 'আল-ফীল',
+    'কুরাইশ', 'আল-মাউন', 'আল-কাওসার', 'আল-কাফিরুন', 'আন-নাসর',
+    'আল-মাসাদ(লাহাব)', 'আল-ইখলাস', 'আল-ফালাক', 'আন-নাস'
+];
+
+
+
+function renderAyah(ayah) {
+  let ayahText = ayah.text;
+  
+  if (ayah.numberInSurah === 1 && ayah.surah.number !== 1 && ayah.surah.number !== 9) {
+    const bismillah = 'بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ';
+    if (ayahText.startsWith(bismillah)) {
+      ayahText = ayahText.replace(bismillah, '').trim();
+    }
+  }
+  
+  const surahNum = String(ayah.surah.number).padStart(3, '0');
+  const ayahNum = String(ayah.numberInSurah).padStart(3, '0');
+  const fileName = `${surahNum}${ayahNum}.mp3`;
+  const audioUrl = `https://everyayah.com/data/${currentQari}/${fileName}`;
+  const uniqueId = `ayah-${ayah.surah.number}-${ayah.numberInSurah}`;
+  
+  const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+  const convertToBangla = n => n.toString().split('').map(d => banglaDigits[d] || d).join('');
+  
+  const surahBangla = surahNamesBnFull[ayah.surah.number - 1] || 'নাম নেই';
+  const juzzNumber = ayah.juz || 1;
+  
+  const translation = "এখানে বাংলা অনুবাদ আসবে";
+  const tafsir = "এখানে সংক্ষিপ্ত তাফসির আসবে";
+  
+  const div = document.createElement('div');
+  div.className = 'bg-white rounded-2xl shadow-xl p-6 mb-6 border border-green-400';
+  
+  div.innerHTML = `
+
+<div class="bg-green-600 text-white rounded-lg px-4 py-2 mb-4 text-sm font-semibold flex flex-col md:flex-row items-center justify-between gap-2 text-center">
+  <span><i class="fa-solid fa-book-open mr-1"></i> সূরা: ${surahBangla} (${ayah.surah.englishName})</span>
+  <span><i class="fa-solid fa-align-right mr-1"></i> আয়াত: ${convertToBangla(ayah.numberInSurah)}</span>
+  <span><i class="fa-solid fa-layer-group mr-1"></i> পারা: ${convertToBangla(juzzNumber)}</span>
+</div>
+    <p class="text-4xl text-right text-gray-900 mb-4 leading-relaxed " style="font-family: 'MyFont', sans-serif;">${ayahText}</p>
+    <p class="text-base text-gray-800 mb-2 font-serif"><strong>অনুবাদ:</strong> ${translation}</p>
+    <p class="text-sm text-gray-700 italic mb-3"><strong>তাফসির:</strong> ${tafsir}</p>
+
+    <div class="bg-gray-100 rounded-xl p-4 flex flex-col gap-3">
+      <audio id="audio-${uniqueId}" class="hidden">
+        <source src="${audioUrl}" type="audio/mpeg">
+        আপনার ব্রাউজার অডিও প্লে সমর্থন করে না।
+      </audio>
+
+      <div class="flex items-center justify-between">
+        <button id="play-${uniqueId}" class="text-gray-700 hover:text-blue-600 text-lg">▶️</button>
+        <input id="progress-${uniqueId}" type="range" min="0" value="0" step="0.1" class="w-full mx-3 accent-blue-500" />
+        <span id="time-${uniqueId}" class="text-xs text-gray-500">0:00</span>
+      </div>
+
+      <div class="flex justify-center">
+        <a href="${audioUrl}" download class="text-sm text-green-600 hover:underline">⬇️ ডাউনলোড</a>
+      </div>
+    </div>
+
+    <div class="mt-6 flex justify-center">
+      <button id="share-${uniqueId}" class="flex items-center gap-2 text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-xl shadow">
+        <i class="fa-solid fa-square-share-nodes"></i> শেয়ার করুন
+      </button>
+      <p id="share-error-${uniqueId}" class="text-sm text-red-600 mt-2 hidden">⚠️ আপনার ব্রাউজার শেয়ার সমর্থন করে না।</p>
+    </div>
+  `;
+  
+  content.appendChild(div);
+  
+  const audio = document.getElementById(`audio-${uniqueId}`);
+  const playBtn = document.getElementById(`play-${uniqueId}`);
+  const progress = document.getElementById(`progress-${uniqueId}`);
+  const currentTime = document.getElementById(`time-${uniqueId}`);
+  
+  playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      playBtn.textContent = '⏸️';
+    } else {
+      audio.pause();
+      playBtn.textContent = '▶️';
+    }
+  });
+  
+  audio.addEventListener('timeupdate', () => {
+    progress.value = audio.currentTime;
+    currentTime.textContent = formatTime(audio.currentTime);
+  });
+  
+  audio.addEventListener('loadedmetadata', () => {
+    progress.max = audio.duration;
+  });
+  
+  progress.addEventListener('input', () => {
+    audio.currentTime = progress.value;
+  });
+  
+  function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+    return `${mins}:${secs}`;
+  }
+  
+  const shareBtn = document.getElementById(`share-${uniqueId}`);
+  const shareError = document.getElementById(`share-error-${uniqueId}`);
+  
+  shareBtn.addEventListener('click', async () => {
+    const shareData = {
+      title: `সূরা ${surahBangla} - আয়াত ${convertToBangla(ayah.numberInSurah)}`,
+      text: `📖 সূরা: ${surahBangla} (${ayah.surah.englishName})\nআয়াত: ${convertToBangla(ayah.numberInSurah)} | পারা: ${convertToBangla(juzzNumber)}\n\n${ayahText}\n\n🔸 অনুবাদ: ${translation}\n🔹 তাফসির: ${tafsir}`,
+      url: window.location.href
+    };
+    
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.warn("শেয়ার বাতিল হয়েছে", err);
+      }
+    } else {
+      shareError.classList.remove('hidden');
+    }
+  });
+}
+
+
+
+
+
+async function loadPaginatedAyahs(page) {
+  content.innerHTML = '';
+  pagination.innerHTML = '';
+  const start = (page - 1) * pageSize + 1;
+  const end = Math.min(start + pageSize - 1, currentSurahAyahCount);
+  const promises = [];
+  for (let i = start; i <= end; i++) {
+    promises.push(axios.get(`https://api.alquran.cloud/v1/ayah/${currentSurahNumber}:${i}`));
+  }
+  const responses = await Promise.all(promises);
+  responses.forEach(res => renderAyah(res.data.data));
+
+  const totalPages = Math.ceil(currentSurahAyahCount / pageSize);
+
+  const groupSize = 5;
+  const currentGroup = Math.floor((page - 1) / groupSize);
+  const groupStart = currentGroup * groupSize + 1;
+  const groupEnd = Math.min(groupStart + groupSize - 1, totalPages);
+
+  if (groupStart > 1) {
+    const prevGroupBtn = document.createElement('button');
+    prevGroupBtn.textContent = '← পূর্ববর্তী';
+    prevGroupBtn.className = 'px-3 py-1 bg-gray-300 rounded hover:bg-gray-400';
+    prevGroupBtn.onclick = () => {
+      currentPage = groupStart - 1;
+      loadPaginatedAyahs(currentPage);
+    };
+    pagination.appendChild(prevGroupBtn);
+  }
+
+  for (let i = groupStart; i <= groupEnd; i++) {
+    const btn = document.createElement('button');
+    btn.textContent = i;
+    btn.className = `px-3 py-1 rounded ${i === page ? 'bg-green-600 text-white' : 'bg-gray-200 hover:bg-gray-300'}`;
+    btn.onclick = () => {
+      currentPage = i;
+      loadPaginatedAyahs(currentPage);
+    };
+    pagination.appendChild(btn);
+  }
+
+  if (groupEnd < totalPages) {
+    const nextGroupBtn = document.createElement('button');
+    nextGroupBtn.textContent = 'পরবর্তী →';
+    nextGroupBtn.className = 'px-3 py-1 bg-gray-300 rounded hover:bg-gray-400';
+    nextGroupBtn.onclick = () => {
+      currentPage = groupEnd + 1;
+      loadPaginatedAyahs(currentPage);
+    };
+    pagination.appendChild(nextGroupBtn);
+  }
+}
+
+    
+    loadSurahList();
+    loadParaOptions();
+	
+	function convertBengaliToEnglishNumbers(bnStr) {
+  const map = {
+    '০': '0', '১': '1', '২': '2', '৩': '3', '৪': '4',
+    '৫': '5', '৬': '6', '৭': '7', '৮': '8', '৯': '9'
+  };
+  return bnStr.replace(/[০-৯]/g, d => map[d]);
+}
+
+
+const directionSection = document.getElementById('direction-section');
+
+if (surahId) {
+  directionSection.style.display = 'none';
+} else {
+  directionSection.style.display = 'block';
+}
+
+function loadParaList() {
+  for (let i = 1; i <= 30; i++) {
+    const option = document.createElement('option');
+    option.value = i;
+    option.textContent = `পারা ${convertEnglishToBengaliNumbers(i)}`;
+    paraSelect.appendChild(option);
+  }
+}
+loadParaList();
+
+
+paraSelect.addEventListener('change', async () => {
+  const para = paraSelect.value;
+  content.innerHTML = '';
+  pagination.innerHTML = '';
+  if (!para) return;
+
+  try {
+    const res = await axios.get(`https://api.alquran.cloud/v1/juz/${para}`);
+    const ayahs = res.data.data.ayahs;
+    currentSurahAyahCount = ayahs.length;
+    currentSurahNumber = ayahs[0].surah.number;
+    if (ayahs.length <= 20) {
+      ayahs.forEach(renderAyah);
+    } else {
+      paginatedAyahs = ayahs;
+      currentPage = 1;
+      renderPaginatedPara();
+    }
+  } catch (err) {
+    console.error("Error loading para:", err);
+    content.innerHTML = `<div class="text-red-600">পারার আয়াত লোড করতে সমস্যা হচ্ছে।</div>`;
+  }
+});
+
+let paginatedAyahs = [];
+
+function renderPaginatedPara() {
+  content.innerHTML = '';
+  pagination.innerHTML = '';
+  const start = (currentPage - 1) * pageSize;
+  const end = Math.min(start + pageSize, paginatedAyahs.length);
+  for (let i = start; i < end; i++) {
+    renderAyah(paginatedAyahs[i]);
+  }
+
+  const totalPages = Math.ceil(paginatedAyahs.length / pageSize);
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement('button');
+    btn.textContent = convertEnglishToBengaliNumbers(i);
+    btn.className = `px-3 py-1 rounded ${i === currentPage ? 'bg-green-600 text-white' : 'bg-gray-300'}`;
+    btn.addEventListener('click', () => {
+      currentPage = i;
+      renderPaginatedPara();
+    });
+    pagination.appendChild(btn);
+  }
+};
+
+  </script>
+  
+ 
+<script>
+  const quotes = [
+    {
+      text: "নিশ্চয়ই আল্লাহ ধৈর্যশীলদের সাথে আছেন।",
+      meta: "| সূরা বাকারা | আয়াত ১৫৩ |",
+      bg: "bg-green-100"
+    },
+    {
+      text: "নিশ্চয়ই কষ্টের সাথে আছে স্বস্তি।",
+      meta: "| সূরা ইনশিরাহ | আয়াত ৬ |",
+      bg: "bg-yellow-100"
+    },
+    {
+      text: "আল্লাহ যা চান, তাই হয়।",
+      meta: "| সূরা আন-নূর | আয়াত ৩৫ |",
+      bg: "bg-blue-100"
+    }
+  ];
+
+  const slidesContainer = document.getElementById("slides");
+  const dotsContainer = document.getElementById("dots");
+  const sliderWrapper = document.getElementById("sliderContainer");
+
+  let currentSlide = 0;
+  let isPaused = false;
+  let interval;
+
+  // Create slides and dots
+  quotes.forEach((quote, index) => {
+    const slide = document.createElement("div");
+    slide.className = "min-w-full px-4 fade-in flex flex-col justify-center items-center text-center";
+    slide.innerHTML = `
+      <p class="text-lg md:text-xl font-semibold mb-2">${quote.text}</p>
+      <p class="text-sm text-gray-600">${quote.meta}</p>
+    `;
+    slidesContainer.appendChild(slide);
+
+    const dot = document.createElement("button");
+    dot.className = "w-3 h-3 rounded-full bg-gray-400";
+    dot.onclick = () => {
+      currentSlide = index;
+      updateSlider();
+    };
+    dotsContainer.appendChild(dot);
+  });
+
+  const slides = slidesContainer.children;
+  const dots = dotsContainer.children;
+
+  function updateSlider() {
+    Array.from(slides).forEach(slide => slide.classList.remove("active"));
+    slides[currentSlide].classList.add("active");
+
+    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    Array.from(dots).forEach(dot => dot.className = "w-3 h-3 rounded-full bg-gray-400");
+    dots[currentSlide].className = "w-3 h-3 rounded-full bg-green-600";
+
+    // Change background color
+    sliderWrapper.className = `max-w-xl mx-auto rounded-xl shadow-md p-6 transition-all duration-700 ease-in-out ${quotes[currentSlide].bg}`;
+  }
+
+  function nextSlide() {
+    if (!isPaused) {
+      currentSlide = (currentSlide + 1) % quotes.length;
+      updateSlider();
+    }
+  }
+
+  function startSlider() {
+    interval = setInterval(nextSlide, 5000);
+  }
+
+  function stopSlider() {
+    clearInterval(interval);
+  }
+
+  // Pause/resume on click
+  slidesContainer.addEventListener("click", () => {
+    isPaused = !isPaused;
+  });
+
+  // Touch swipe for mobile
+  let touchStartX = 0;
+  slidesContainer.addEventListener("touchstart", e => {
+    touchStartX = e.touches[0].clientX;
+  });
+
+  slidesContainer.addEventListener("touchend", e => {
+    const touchEndX = e.changedTouches[0].clientX;
+    if (touchEndX < touchStartX - 50) {
+      currentSlide = (currentSlide + 1) % quotes.length;
+      updateSlider();
+    } else if (touchEndX > touchStartX + 50) {
+      currentSlide = (currentSlide - 1 + quotes.length) % quotes.length;
+      updateSlider();
+    }
+  });
+
+  // Initialize
+  updateSlider();
+  startSlider();
+  
+  
+  async function loadQariList() {
+  const qariSelect = document.getElementById('qariSelect');
+  qariSelect.innerHTML = ''; // clear old options
+  
+  try {
+    const res = await fetch('/qari.json'); // adjust path as needed
+    const qaris = await res.json();
+    
+    qaris.forEach((qari, index) => {
+      const option = document.createElement('option');
+      option.value = qari.value;
+      option.textContent = qari.name;
+      if (index === 0) option.selected = true; // ✅ Select first one by default
+      qariSelect.appendChild(option);
+    });
+    
+    currentQari = qariSelect.value;
+    
+  } catch (err) {
+    console.error("Qari list load failed:", err);
+    qariSelect.innerHTML = '<option>Qari লোড করা যায়নি</option>';
+  }
+}
+
+qariSelect.addEventListener('change', () => {
+  currentQari = qariSelect.value;
+});
+
+loadQariList();
+  
+  
+</script> 
+
+
+ 
+</body>
+</html>

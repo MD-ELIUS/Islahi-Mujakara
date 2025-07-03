@@ -1,0 +1,82 @@
+[
+  {
+    "id": "morningDua",
+    "title": "সকালের আযকার",
+    "description": "‘হে ঈমানদারগণ! তোমরা আল্লাহকে বেশি বেশি স্মরণ কর এবং সকালসন্ধ্যায় আল্লাহর পবিত্রতা ও মহিমা ঘোষণা কর।’",
+    "audioSrc": "https://ia801306.us.archive.org/28/items/adhkar-of-the-morning-mishary-alafasi/Adhkar%20of%20the%20Morning_Mishary%20Alafasi%20.mp3",
+    "duration": 21,
+    "schedule": {
+      "type": "daily",
+      "startHour": 10,
+      "startMinute": 0
+    }
+  },
+  
+    {
+    "id": "surahYaseen",
+    "title": "সূরা ইয়াসিন",
+    "description": "‘যে ব্যক্তি সকালে সুরা ইয়াসিন পাঠ করবে সে সন্ধ্যা পর্যন্ত সুখে-স্বস্তিতে থাকবে। যে সন্ধ্যায় পাঠ করবে সে সকাল পর্যন্ত শান্তিতে থাকবে।’",
+    "audioSrc": "https://ia600207.us.archive.org/13/items/QuranCompleteMp3MaherAl-Muaiqly/036-ya-sin.mp3",
+    "duration": 12,
+    "schedule": {
+      "type": "daily",
+      "startHour": 5,
+      "startMinute": 32
+    }
+  },
+  
+  
+      {
+    "id": "Manzil",
+    "title": "মনযিল",
+    "description": "আব্দুর রহমান ইবনে আবি লাইলা রহ. বর্ণনা করেন তাঁর পিতা আবু লাইলা থেকে। তিনি বলেন, আমি নবী সা. এর নিকট বসে থাকা অবস্থায় এক বেদুইন তাঁর নিকটে এসে বললো, আমার এক অসুস্থ ভাই আছে। তিনি বললেন, তোমার ভাই কী রোগে আক্রান্ত? সে বললো, (কোন কিছুর) কুপ্রভাব (আছর)। তিনি বললেন, তুমি যাও এবং তাকে আমার নিকট নিয়ে এসো। আবূ লায়লা রা. বলেন, সে গিয়ে তার ভাইকে নিয়ে আসলে তিনি তাকে নিজের সামনে বসলেন। আমি শুনতে পেলাম, তিনি সূরা ফাতিহা, সূরা বাকারার প্রথম চার আয়াত, সূরা বাকারার মধ্যখানের দু’আয়াত (১৬৩-১৬৪ নং আয়াত), আয়াতুল কুরসী (২৫৫ নং আয়াত) এবং বাকারার শেষ তিন আয়াত (২৮৪-২৮৬ আয়াত) এবং আল ইমরানের একটি আয়াত, আমার মনে হয় তিনি ১৮ নং আয়াত পড়েছিলেন এবং সূরা আরাফের এক আয়াত (৫৪ নং আয়াত), সূরা মুমিনূনের এক আয়াত (১১৭ নং আয়াত), সূরা জিন-এর এক আয়াত (৩ নং আয়াত), সুরা সাফ্ফাত এর প্রথম দশ আয়াত, সুরা হাশরের শেষ তিন (২২, ২৩ ও ২৪) আয়াত, সূরা ইখলাস, সূরা ফালাক ও সূরা নাস পড়ে তাকে ফুঁ দিলেন। তাতে বেদুইন এমনভাবে সুস্থ হয়ে দাঁড়ালো যে, তার কোন রোগই অবশিষ্ট নেই।",
+    "audioSrc": "https://ia600409.us.archive.org/34/items/manzil-maher-al-muaiqly/manzil_ruqyah_from_black_magic_sheikh_mahir_al_muaiqly.mp3",
+    "duration": 14,
+    "schedule": {
+      "type": "daily",
+      "startHour": 5,
+      "startMinute": 45
+    }
+  },
+
+    {
+    "id": "eveningDua",
+    "title": "সন্ধ্যার আযকার",
+    "description": "‘হে ঈমানদারগণ! তোমরা আল্লাহকে বেশি বেশি স্মরণ কর এবং সকালসন্ধ্যায় আল্লাহর পবিত্রতা ও মহিমা ঘোষণা কর।’",
+    "audioSrc": "https://ia601300.us.archive.org/13/items/adhkar-of-the-evening-mishary-alafasi/Adhkar%20of%20the%20Evening_Mishary%20Alafasi%20.mp3",
+    "duration": 21,
+    "schedule": {
+      "type": "daily",
+      "startHour": 18,
+      "startMinute": 55
+      
+    }
+  },
+  {
+    "id": "jumaKhutba",
+    "title": "জুমার বয়ান",
+    "description": "জুমার দিনের বিশেষ খুতবার অংশ।",
+    "audioSrc": "/audio/fazrdua.mp3",
+    "duration": 40,       
+    "schedule": {
+      "type": "weekly",
+      "dayOfWeek": "শনিবার",
+      "startHour": 12,
+      "startMinute": 30
+    }
+  },
+  {
+    "id": "monthlyIslahiMajlis",
+    "title": "মাসিক ইসলাহী মজলিস",
+    "description": "প্রতি মাসের প্রথম বৃহস্পতিবারের জন্য একটি বিশেষ দোয়া।",
+    "audioSrc": "monthly_dua.mp3",
+    "duration": 60,
+    "schedule": {
+      "type": "monthly_specific_day",
+      "dayOfWeek": "বৃহস্পতিবার",
+      "dayOfMonthOccurrence": 2,
+      "startHour": 21,
+      "startMinute": 30
+    }
+  }
+]

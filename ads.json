@@ -1,0 +1,95 @@
+[
+  {
+    "section": "quran",
+    "name": "আল কাউসার",
+    "link": "https://www.alkawsar.com/bn/",
+    "logo": "https://www.alkawsar.com/static/lynx/images/alkawsar_logo.svg",
+    "tagline": "নিয়মিত আল কাউসার পত্রিকা পড়ুন"
+  },
+  {
+    "section": "quran",
+    "name": "নূরুল কুরআন একাডেমি",
+    "link": "https://nlquran.net/",
+    "logo": "https://nlquran.net/wp-content/uploads/2022/07/91501307_2523141534610546_5823883152665346048_n-e1656928765916.png",
+    "tagline": "আরবী ভাষা ও কুরআন শিখুন"
+  },
+  {
+    "section": "quran",
+    "name": "বাংলাদেশ ইসলামী লেখক ফোরাম",
+    "link": "https://www.islamilekhokforum.com/",
+    "logo": "https://www.islamilekhokforum.com/wp-content/uploads/2018/06/wLogo.png",
+    "tagline": "যুক্ত হোন ইসলামী লেখকদের সংগঠনে"
+  }
+  
+ , 
+  
+    {
+    "section": "book",
+    "name": "কিতাবঘর",
+    "link": "https://www.kitabghor.com/",
+    "logo": "https://www.kitabghor.com/img/logo.png",
+    "tagline": "স্বল্পমূল্যে অনলাইনে বই কিনুন"
+  },
+  
+  {
+    "section": "book",
+    "name": "বইটই",
+    "link": "https://boitoi.com.bd/collection?type=category&id=14&title=ISLAMIC%20BOOKS",
+    "logo": "https://static.boitoi.com.bd/static/assets/images/logonavbar.png",
+    "tagline": "সরাসরি অনলাইনে ইসলামি বই পড়ুন"
+  },
+  
+  {
+    "section": "book",
+    "name": "মাকতাবাতুল আশরাফ",
+    "link": "https://maktabatulashraf.com/",
+    "logo": "https://media.kitabghor.com/publisher/1649978815_i13yhpht_Untitled-1.png",
+    "tagline": "নির্ভরযোগ্য প্রকাশনী থেকে দ্বীনি কিতাব কিনুন"
+  }
+  
+ , 
+    {
+    "section": "article",
+    "name": "আল কাউসার",
+    "link": "https://www.alkawsar.com/bn/",
+    "logo": "https://www.alkawsar.com/static/lynx/images/alkawsar_logo.svg",
+    "tagline": "নিয়মিত ইসলামি পত্রিকা পড়ুন"
+  },
+  {
+    "section": "article",
+    "name": "ইন্টারনেট আর্কাইভ",
+    "link": "https://archive.org/details/islambooks",
+    "logo": "https://archive.org/services/img/islambooks",
+    "tagline": "ইসলামিক বই পড়ুন ও সংরক্ষণ করুন"
+  },
+  {
+    "section": "article",
+    "name": "আল কুরআন প্রোজেক্ট",
+    "link": "/quran",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/79/Quran_Kareem.svg",
+    "tagline": "সহজে কুরআনের তাফসীর ও অনুবাদ পড়ুন"
+  }
+  ,
+
+   {
+    "section": "audio",
+    "name": "ইসলামিক অনলাইন মাদ্রাসা",
+    "link": "https://iom.edu.bd/",
+    "logo": "https://iom.edu.bd/wp-content/uploads/2023/06/iomlogo.png",
+    "tagline": "একটি দ্বীনি শিক্ষা প্রতিষ্ঠান"
+  },
+  {
+    "section": "audio",
+    "name": "ইন্টারনেট মাদ্রাসা",
+    "link": "https://www.internetmadrasa.com/",
+    "logo": "https://www.internetmadrasa.com/_next/image?url=%2Fimages%2Fhazrat-shaikh-name.png&w=640&q=75",
+    "tagline": "ঘরে বসে ইলমে দ্বীন শিক্ষা করুন"
+  },
+  {
+    "section": "audio",
+    "name": "হযরত মুফতী মুহাম্মাদ ইয়াহইয়া সাহেব ",
+    "link": "https://t.me/boyan24",
+    "logo": "/images/logo.jpg",
+    "tagline": "নিয়মিত কুরআনের তাফসীর ও ইসলাহী বয়ান শুনুন"
+  }
+]

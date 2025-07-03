@@ -1,0 +1,32 @@
+[
+  {
+    "name": "সাপ্তাহিক তাফসির",
+    "slug": "tafsir",
+    "description": "নিয়মিত কুরআনের অর্থ অনুধাবন ও উপদেশ গ্রহন করুন",
+    "link": "audios.html?category=তাফসির"
+  },
+  {
+    "name": "ইসলাহী বয়ান",
+    "slug": "islahi",
+    "description": "আত্মার চিকিৎসার জন্য অনুপ্রেরণাদায়ক বয়ানসমূহ শুনুন",
+    "link": "audios.html?category=ইসলাহী"
+  },
+  {
+    "name": "তাবলীগি আলোচনা",
+    "slug": "tabligh",
+    "description": "মুরব্বীদের জবানে দাওয়াত ও তাবলীগের পথ ও পদ্ধতি",
+    "link": "audios.html?category=তাবলীগ"
+  },
+  {
+    "name": "আকিদা ও বিশ্বাস",
+    "slug": "aqidah",
+    "description": "বিশুদ্ধ বিশ্বাস ও আকিদার ব্যাখ্যাসমূহ",
+    "link": "audios.html?category=আকিদা"
+  },
+  {
+    "name": "হাদীসের আলোচনার",
+    "slug": "hadith",
+    "description": "নবিজির বাণীর আলোকে জীবন গড়ুন",
+    "link": "audios.html?category=হাদীস"
+  }
+]
