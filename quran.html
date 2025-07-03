@@ -881,7 +881,7 @@ function renderPaginatedPara() {
   qariSelect.innerHTML = ''; // clear old options
   
   try {
-    const res = await fetch('/qari.json'); // adjust path as needed
+    const res = await fetch('qari.json'); // adjust path as needed
     const qaris = await res.json();
     
     qaris.forEach((qari, index) => {
